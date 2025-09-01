@@ -1,0 +1,1401 @@
+/* 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.content_box_component {
+    box-sizing: content-box;
+} 
+*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    background-color: #000000;
+    background-image: url(../img/index-background.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.inner_page {
+    color: #000000;
+
+    background-color: #f9f6f3;
+    background-image: url(../img/bg.jpg);
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.button {
+    display: inline-block;
+    margin-right: 16px;
+    padding: 10px 30px;
+
+    font: inherit; /* принудительно включаем наследование стилей от родителя */
+
+    /* Центруем текст и придаем нужный вид */
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #000000;
+    border: none;
+}
+
+.button.disabled,
+.button:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background-color: #000000;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    background-color: #663d15;
+}
+
+.main_header {
+    margin-bottom: 75px;
+}
+
+.inner_page .main_header {
+    margin-bottom: 50px;
+
+    background-color: #000000;
+}
+
+.main_nav {
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_header_logo{
+    order: 2; /* Задаем порядковый номер флекс элементу, чтобы он отображался последним */
+    width: 368px;
+    height: 153px;
+}
+
+.inner_page .main_header_logo {
+    order: 0;
+    
+    width: 111px;
+    height: 24px;
+    padding: 23px 20px;
+}
+
+.inner_page .main_nav {
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.main_nav_wrapper {
+    width: 100%;
+    margin-bottom: 60px;
+
+    background-color: #000000;
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.main_nav_wrapper .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site_nav,
+.user_nav {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.site_nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 620px;
+}
+
+.user_nav {
+    display: flex;
+    max-width: 140px;
+}
+
+.site_nav a,
+.user_nav a {
+    display: block;
+    padding: 25px 20px;
+
+    color: #ffffff;
+}
+
+.site_nav a:hover,
+.site_nav a:focus,
+.user_nav a:hover,
+.user_nav a:focus {
+    background-color: #242424;
+}
+
+.site_nav_current {
+    position: relative;
+}
+
+.site_nav_current a:not([href]){
+    background-color: #000000;
+}
+
+.site_nav_current::after {
+    content: "";
+
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+
+    height: 5px;
+
+    background-color: #ffffff;
+}
+
+.user_nav .login_link {
+    position: relative;
+    padding-left: 50px;
+}
+
+.login_link::before {
+    content: "";
+
+    position: absolute;
+    top: 27px;
+    left: 24px;
+
+    width: 16px;
+    height: 18px;
+
+    background-image: url(../svg/login.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    opacity: 0.3;
+}
+
+.login_link:hover::before,
+.login_link:focus::before,
+.login_link:active::before {
+    opacity: 1;
+}
+
+.features_list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+}
+
+.features_item {
+    width: 300px;
+
+    text-align: center;
+}
+
+.features_item h3 {
+    position: relative;
+
+    margin: 0;
+    margin-bottom: 60px;
+
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.features_item h3::after {
+    content: "";
+
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+
+    background-color: #ffffff;
+
+    transform: rotate(45deg);
+}
+
+.features_item p {
+    margin: 0 10px;
+}
+
+.features {
+    margin-bottom: 80px;
+}
+
+.index_colums {
+    color: #000000;
+
+    background-color: #f8f5f2;
+    background-image: 
+        url(../img/polos.png),
+        url(../img/bg.jpg);
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
+
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.index_colums h2 {
+    margin: 0;
+    margin-bottom: 25px;
+
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.news {
+    width: 380px;
+}
+
+.news_list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.news_item {
+    margin-bottom: 25px;
+}
+
+.news_item p {
+    margin: 0;
+}
+
+.news_item time {
+    text-transform: none;
+}
+
+.gallery {
+    width: 300px;
+}
+
+.gallery_container {
+    position: relative;
+
+    height: 260px;
+}
+
+.gallery_content {
+    height: 164px;
+    margin: 0;
+
+    background-color: #cccccc;
+    border: 7px solid #ffffff;
+}
+
+.gallery_content img {
+    width: 286px;
+    height: 164px;
+}
+
+.gallery_button {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+
+    width: 140px;
+    margin: 0;
+}
+
+.gallery_button_back {
+    left: 0;
+}
+
+.gallery_button_next {
+    right: 0;
+}
+
+.contacts {
+    width: 380px;
+}
+
+.contacts p {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.appointment {
+    width: 300px;
+}
+
+.appointment_info {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.appointment_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.appointment_item {
+    width: 140px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.appointment_item label {
+    display: block;
+    margin-bottom: 9px;
+    margin-left: 15px;
+}
+
+.appointment_item input {
+    box-sizing: border-box;
+    width: 140px;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+
+    font: inherit; /* Наследуем принудительно стили для полей ввода */
+
+    background-color: transparent; /* Задаем прозрачный фон для полей ввода */
+    border: 2px solid #000000;
+}
+
+.appointment_item input:focus {
+    border-color: #663d15;
+}
+
+.appointment .button {
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.page_title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    
+    list-style: none;
+}
+
+.breadcrumbs li {
+    position: relative;
+    margin-right: 42px;
+}
+
+.breadcrumbs li::after {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    right: -25px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #000000;
+
+    transform: rotate(45deg);
+}
+
+.breadcrumbs li:last-child {
+    margin-right: 0;
+}
+
+.breadcrumbs a {
+    color: #000000;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    text-decoration: underline;
+}
+
+.breadcrumbs_current {
+    color: #aba9a7;
+}
+
+.breadcrumbs_current::after {
+    display: none;
+}
+
+.catalog_columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters {
+    width: 180px;
+}
+
+.filter fieldset {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+
+    border: none;
+}
+
+.filter fieldset:first-child {
+    margin-bottom: 35px;
+}
+
+.filter legend {
+    margin-bottom: 26px;
+
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.filter ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    line-height: 18px;
+}
+
+.filter_option {
+    margin-bottom: 19px;
+    padding-left: 45px;
+}
+
+.filter_option label {
+    position: relative;
+
+    display: block;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter_input:hover + label,
+.filter_input:focus + label {
+    color: #663d15;
+}
+
+.filter_input_checkbox + label::before {
+    content: "";
+
+    position: absolute;
+    left: -42px;
+    top: 0;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #000000;
+}
+
+.filter_input_checkbox:checked + label::after {
+    content: "";
+
+    position: absolute;
+    top: 4px;
+    left: -38px;
+
+    width: 12px;
+    height: 12px;
+
+    background-image: url(../svg/cross.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.filter_input_radio + label::before {
+    content: "";
+
+    position: absolute;
+    left: -42px;
+    top: -1px;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.filter_input_radio:checked + label::after {
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    left: -36px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+.filter_input:disabled + label {
+    color: #000000;
+
+    opacity: 0.5;
+}
+
+.catalog {
+    width: 700px;
+}
+
+.catalog_list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+
+    list-style: none;
+}
+
+.catalog_item {
+    width: 220px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalog_item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.catalog_item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.catalog_item a {
+    display: flex;
+    flex-direction: column;
+
+    color: #000000;
+}
+
+.catalog_item h3 {
+    order: 1;
+    margin-top: 17px;
+    margin-bottom: 12px;
+    margin-left: 16px;
+    margin-right: 15px;
+
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.catalog_category {
+    display: block;
+
+    text-transform: none;
+}
+
+.catalog_item_image {
+    width: 220px;
+    height: 165px;
+    margin: 0;
+}
+
+.catalog_item_price {
+    display: flex;
+    margin: 15px;
+    margin-top: 0;
+}
+
+.catalog_item_price b {
+    width: 112px;
+    padding: 13px 25px 11px;
+
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+
+    background-color: #e5e5e5;
+}
+
+.catalog_item_price .button {
+    width: 50px;
+    padding: 13px 18px 11px;
+    margin-right: 0;
+
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.pagination_list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.pagination_item {
+    margin-right: 5px;
+}
+
+.pagination_item:last-child {
+    margin-right: 0;
+}
+
+.pagination_item a {
+    display: block;
+    padding: 10px 19px;
+
+    color: #ffffff;
+
+    background-color: #000000;
+}
+
+.pagination_item a:hover,
+.pagination_item a:focus,
+.pagination_item a:active {
+    background-color: #663d15;
+}
+
+.pagination_item_current a {
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.pagination_item_current a:hover,
+.pagination_item_current a:focus,
+.pagination_item_current a:active {
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.product_photos {
+    width: 460px;
+}
+
+.product_photo_preview {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.product_photo_preview li {
+    width: 140px;
+    height: 149px;
+    margin-right: 20px;
+
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product_photo_preview li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.product_photo_full {
+    width: 460px;
+    height: 498px;
+    margin: 0;
+    margin-bottom: 20px;
+
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product_info {
+    width: 390px;
+    padding-top: 23px;
+}
+
+.product_description {
+    display: flex;
+    justify-content: space-between;
+
+    padding-right: 10px;
+    margin-bottom: 29px;
+}
+
+.product_description p {
+    width: 200px;
+}
+
+.product_article {
+    text-align: right;
+    color: #eaeaea;
+}
+
+.product_info p {
+    margin: 0;
+}
+
+.product_info .product_price {
+    display: flex;
+    margin-bottom: 63px;
+}
+
+.main_footer {
+    color: #ffffff;
+
+    background-color: #212121;
+    background-image: url(../img/footer-bg.jpg);
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+.inner_page .main_footer {
+    margin-top: 45px;
+}
+
+.product_price b {
+    width: 112px;
+    padding-top: 13px;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 11px;
+
+    line-height: 20px;
+    text-align: center;
+
+    background-color: #e5e5e5;
+
+    box-sizing: border-box;
+}
+
+.product_price .button {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.product_info .product_text {
+    margin-bottom: 35px;
+}
+
+.product_info h3 {
+    margin: 0;
+    margin-bottom: 27px;
+
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.product_info ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.product_info li {
+    position: relative;
+
+    padding-left: 23px;
+}
+
+.product_info li::before {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    left: 2px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #000000;
+
+    transform: rotate(45deg);
+}
+
+/* Универсальная верстка для текстовой страницы которая будет наполняться
+    сторонними людьми (из аминки)*/
+.inner_content {
+    margin-bottom: 75px;
+}
+
+.inner_content h2 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.inner_content h3 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.inner_content p {
+    margin: 14px 0;
+}
+
+.inner_content h2 + h3 {
+    margin-top: 30px;
+}
+
+.inner_content table {
+    border-collapse: collapse;
+}
+
+.inner_content td {
+    padding: 10px 15px;
+
+    border: 2px solid #000000;
+}
+
+.inner_content .big_heading {
+    display: flex;
+    align-items: center;
+
+    margin-top: 55px;
+    margin-bottom: 65px;
+
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.big_heading::before,
+.big_heading::after {
+    content: "";
+
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 2px;
+
+    background-color: #000000;
+}
+
+.big_heading::before {
+    margin-right: 25px;
+}
+
+.big_heading::after {
+    margin-left: 25px;
+}
+
+.custom_list_1 {
+    margin: 14px 0;
+    padding: 0;
+    
+    list-style: none;
+}
+
+.custom_list_1 li {
+    position: relative;
+
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.custom_list_1 li::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 0;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #000000;
+    transform: rotate(45deg);
+}
+
+.custom_table_1 {
+    width: 100%;
+}
+
+.custom_table_1 td {
+    width: 50%;
+}
+
+.custom_table_1 td:last-child {
+    text-align: center;
+}
+
+.inner_columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin: 60px 0;
+}
+
+.inner_column_left,
+.inner_column_right {
+    width: 460px;
+}
+
+.inner_column_left *:first-child,
+.inner_column_right *:first-child {
+    margin-top: 0;
+}
+
+.inner_column_left *:last-child,
+.inner_column_right *:last-child {
+    margin-bottom: 0;
+}
+
+.inner_columns > h2:first-child {
+    width: 460px;
+    margin-top: 0;
+    /* margin-right: 460px; */
+    margin-right: calc(100% - 460px);
+}
+
+.shor_text {
+    padding-right: 80px;
+}
+/* --------------------------Конец-------------------------- */
+
+.main_footer {
+    margin-top: 65px;
+    padding: 60px 0;
+}
+
+.main_footer .container {
+    display: flex;
+}
+
+.footer_contacts {
+    width: 320px;
+    margin: 0;
+    margin-right: 80px;
+}
+
+.footer_contacts a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer_contacts a:hover {
+    text-decoration: none;
+}
+
+.footer_social {
+    width: 145px;
+
+    text-align: center;
+}
+
+.footer_social b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer_social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 141px;
+    margin: 0 auto;
+    padding: 0;
+    
+    list-style: none;
+}
+
+.social_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.social_button:hover,
+.social_button:focus {
+    background-color: #ffffff;
+}
+
+/* Так как залили svg в html то можем залезть в него из css и изменить
+    В двнном случае меняем цвет картинки при наведении */
+.social_button:hover path,
+.social_button:focus path {
+    fill: #000000;
+}
+
+.footer_copyright {
+    width: 150px;
+    margin: 0;
+    margin-left: auto;
+
+    text-align: center;
+}
+
+.footer_copyright b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer_copyright .button {
+    display: block;
+    margin-right: 0;
+}
+
+.footer_copyright .button:hover,
+.footer_copyright .button:focus {
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.modal {
+    position: fixed;
+    z-index: 102;
+
+    display: none;
+
+    color: #000000;
+
+    background-color: #f8f3f0;
+    background-image: url(../img/bg.jpg);
+    background-position: 0 0;
+    background-repeat: repeat;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(-2000px); }
+    70%  { transform: translateY(30px);    }
+    90%  { transform: translateY(-10px);   }
+    100% { transform: translateY(0);       }
+}
+
+.modal_show {
+    display: block;
+
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
+
+@keyframes shake {
+    0%, 100%                { transform: translateX(0);     }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80%      { transform: translateX(10px);  }
+}
+
+.modal_error {
+    animation-name: shake;
+    animation-duration: 0.6s;
+}
+
+.modal_login {
+    top: 120px;
+    left: 50%;
+
+    width: 300px;
+    margin-left: -230px;
+    padding: 50px 80px;
+}
+
+.modal h2 {
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.modal_login h2 {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.modal-description {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.login_form p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.login_form input[type="text"],
+.login_form input[type="password"] {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 10px 15px;
+    padding-right: 40px;
+
+    font: inherit;
+    color: #000000;
+    text-transform: uppercase;
+
+    background-color: #f9f6f3;
+    border: 2px solid #000000;
+}
+
+.login_form input:focus {
+    border-color: #663d15;
+}
+
+.login_icon_user {
+    background-image: url(../svg/user.svg);
+    background-position: 270px center;
+    background-repeat: no-repeat;
+}
+
+.login_icon_password {
+    background-image: url(../svg/lock.svg);
+    background-position: 270px center;
+    background-repeat: no-repeat;
+}
+
+.login_form .login_help {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.login_checkbox {
+    position: relative;
+
+    padding-left: 30px;
+
+    cursor: pointer;
+}
+
+.login_checkbox:hover,
+.login_checkbox:focus {
+    color: #663d15;
+}
+
+.login_checkbox input[type="checkbox"] + .checkbox_indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid #000000;
+}
+
+.login_checkbox input[type="checkbox"]:focus + .checkbox_indicator {
+    border-color: #663d15;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.login_checkbox input[type="checkbox"]:checked + .checkbox_indicator::before,
+.login_checkbox input[type="checkbox"]:checked + .checkbox_indicator::after {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 1px;
+
+    width: 15px;
+    height: 2px;
+
+    background-color: #000000;
+}
+
+.login_checkbox input[type="checkbox"]:checked + .checkbox_indicator::before {
+    transform: rotate(45deg);
+}
+
+.login_checkbox input[type="checkbox"]:checked + .checkbox_indicator::after {
+    transform: rotate(-45deg);
+}
+
+.restore{
+    color: #000000;
+    text-decoration: underline;
+}
+
+.restore:hover,
+.restore:focus {
+    text-decoration: none;
+}
+
+.login_form .button {
+    width: 100%;
+    margin-right: 0;
+}
+
+.modal_close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+
+    width: 22px;
+    height: 22px;
+
+    font-size: 0;
+
+    background-color: transparent;
+    border: 0;
+
+    cursor: pointer;
+}
+
+.modal_close::before,
+.modal_close::after {
+    content: "";
+
+    position: absolute;
+    top: 10px;
+    left: 2px;
+
+    width: 19px;
+    height: 3px;
+
+    background-color: #d0d0d0;
+}
+
+.modal_close::before {
+    transform: rotate(45deg);
+}
+
+.modal_close::after {
+    transform: rotate(-45deg);
+}
+
+.modal_map {
+    top: 50%;
+    left: 50%;
+
+    width: 766px;
+    height: 561px;
+    margin-top: -280px;
+    margin-left: -390px;
+
+    border: 7px solid white;
+}
+
+.modal_map div {
+    position: relative;
+}
+
+.modal_map iframe {
+    z-index: 2;
+}
+
+.modal_map p {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    margin: 0;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.overlay_show {
+    display: block;
+
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
+
+.appointment_item .schedule_error {
+    border: 2px solid #e80808;
+
+    animation-name: shake;
+    animation-duration: 0.6s;
+}
