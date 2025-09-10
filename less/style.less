@@ -122,9 +122,9 @@ img {
 .main-nav {
     position: relative;
 
-    width: 320px;
+    // width: 320px; убрано для резины
+    // margin: 0 auto; убрано для резины
     min-height: 51px;
-    margin: 0 auto;
 
     background-color: #826550;
 }
@@ -295,7 +295,10 @@ img {
     .main-nav__wrapper {
         display: flex;
         justify-content: space-between;
-        width: 640px;
+
+        // width: 640px; убрано для резины
+        width: 84%;
+        max-width: 960px;
         margin: 0 auto;
     }
 
@@ -304,11 +307,11 @@ img {
     }
 }
 
-@media (min-width: @desktop-width) {
-    .main-nav__wrapper {
-        width: 960px;
-    }
-}
+// @media (min-width: @desktop-width) {
+//     .main-nav__wrapper {
+//         width: 960px;  Убрано так как резина переопределяет его в другом месте
+//     }
+// }
 
 
 // ----------------------------------------------------------
@@ -350,7 +353,9 @@ img {
     .site-list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        // justify-content: flex-start; убрано для резины
+        justify-content: space-evenly; // Добавлено для норм резины
+        flex-grow: 1; //Сделано для резины
 
         width: 570px;
     }
@@ -558,8 +563,9 @@ img {
 // ----------------------------------------------------------
 // Файл blocks/stats.less
 .stats {
-    width: 320px;
-    margin: 0 auto;
+    // width: 320px; Убрано для резины
+    // margin: 0 auto;
+    width: auto;
 }
 
 .stats__header {
@@ -672,7 +678,11 @@ img {
 
 @media (min-width: @tablet-width) {
     .stats {
-        width: 640px;
+        // width: 640px; EУбрано для резины
+        width: 84%;
+        // max-width: 960px;
+        max-width: 1200px;
+        margin: 0 auto;
         margin-top: -185px;
     }
 
@@ -696,7 +706,8 @@ img {
     }
 
     .stats__slogan {
-        width: 240px;
+        // width: 240px;
+        width: 50%;
         margin-bottom: 18px;
 
         font-size: 40px;
@@ -705,17 +716,24 @@ img {
         text-transform: none;
     }
 
+    .stats__slogan br {
+        display: none;
+    }
+
     .stats__intro {
-        width: 210px;
+        // width: 210px;
+        width: 37.5%;
         margin-top: 5px;
-        padding-right: 37px;
+        padding: 0;
+        padding-right: 30px;
 
         text-align: left;
     }
 
     .stats__legend--top {
         display: block;
-        width: 240px;
+        // width: 240px;
+        width: 50%;
 
         color: rgba(0, 0, 0, 0.3);
     }
@@ -730,7 +748,9 @@ img {
     }
 
     .stats__list tr {
-        width: 250px;
+        // width: 250px;
+        width: 50%;
+        box-sizing: border-box;
         padding: 25px 35px;
         padding-bottom: 28px;
     }
@@ -763,12 +783,14 @@ img {
     .stats {
         display: flex;
 
-        width: 960px;
+        // width: 960px;
         margin-top: -160px;
     }
 
     .stats__header {
-        display: block;
+        // display: block;
+        flex-grow: 1;
+        flex-direction: column;
         width: 240px;
 
         &::before {
@@ -785,14 +807,17 @@ img {
         width: auto;
         margin-bottom: 32px;
         padding-right: 30px;
+        padding-left: 0;
     }
 
     .stats__legend--top {
         width: auto;
+        margin-top: auto;
     }
 
     .stats__list {
         display: flex;
         width: 640px;
+        flex-grow: 1;
     }
 }
