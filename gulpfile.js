@@ -74,6 +74,8 @@ const autoprefixer = require('autoprefixer');
 const htmlmin = require('gulp-htmlmin');
 const browsersync = require('browser-sync').create();
 
+const copy = require('gulp-copy');  // Копирование элементов
+
 // Пути к файлам откуда и куда
 const paths = {
     html: {
@@ -89,7 +91,19 @@ const paths = {
     scripts: {
         src: './js/**/*.js',
         dest: './done/js-min'
+    },
+
+    images: {
+        src: './img/**/*.*',
+        dest: './done/'
     }
+}
+
+function imgcopy() {
+    return gulp.src(paths.images.src)
+    .pipe(copy(paths.images.dest))
+
+    .pipe(gulp.dest(paths.images.dest))
 }
 
 function clean() {
@@ -149,22 +163,24 @@ function scripts() {
 function watch() {
     browsersync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./done/",
+            index: "index.min.html"
         }
     })
 
-    gulp.watch(paths.html.dest).on('change', browsersync.reload)
     gulp.watch(paths.html.src, html)
     gulp.watch(paths.styles.src, styles)
     gulp.watch(paths.scripts.src, scripts)
+    gulp.watch(paths.html.dest).on('change', browsersync.reload)
 }
 
-const build = gulp.series(clean, html, gulp.parallel(styles, scripts), watch);
+const build = gulp.series(html, gulp.parallel(styles, scripts, imgcopy), watch);
 
 exports.clean = clean;
 exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.imgcopy = imgcopy;
 exports.watch = watch;
 exports.build = build;
 exports.default = build; // Вызыввет build по одной команде gulp
