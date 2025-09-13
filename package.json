@@ -16,20 +16,25 @@
     "url": "https://github.com/shamanveca/Barbershop/issues"
   },
   "homepage": "https://github.com/shamanveca/Barbershop#readme",
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
     "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.4",
-    "del": "^8.0.0",
+    "del": "^6.1.1",
     "gulp": "^5.0.1",
-    "gulp-autoprefixer": "^10.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-less": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2"
   }
 }
