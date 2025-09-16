@@ -79,29 +79,29 @@ const copy = require('gulp-copy');  // Копирование элементов
 // Пути к файлам откуда и куда
 const paths = {
     html: {
-        src: './*.html',
-        dest: './done'
+        src: 'src/*.html',
+        dest: 'done/'
     },
 
     styles: {
-        src: './less/**/*.less',
-        dest: './done/css-min'
+        src: 'src/less/**/*.less',
+        dest: 'done/css-min/'
     },
 
     scripts: {
-        src: './js/**/*.js',
-        dest: './done/js-min'
+        src: 'src/js/**/*.js',
+        dest: 'done/js-min/'
     },
 
     images: {
-        src: './img/**/*.*',
-        dest: './done/'
+        src: 'src/img/**/*.*',
+        dest: 'done/img'
     }
 }
 
 function imgcopy() {
     return gulp.src(paths.images.src)
-    .pipe(copy(paths.images.dest))
+    // .pipe(copy(paths.images.dest))
 
     .pipe(gulp.dest(paths.images.dest))
 }
@@ -163,8 +163,12 @@ function scripts() {
 function watch() {
     browsersync.init({
         server: {
-            baseDir: "./done/",
+            
+            baseDir: "done/",
             index: "index.min.html"
+
+            // baseDir: "./",
+            // index: "barber_all_index.html"
         }
     })
 
@@ -174,7 +178,7 @@ function watch() {
     gulp.watch(paths.html.dest).on('change', browsersync.reload)
 }
 
-const build = gulp.series(html, gulp.parallel(styles, scripts, imgcopy), watch);
+const build = gulp.series(html, gulp.parallel(styles, scripts), watch);
 
 exports.clean = clean;
 exports.html = html;
