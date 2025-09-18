@@ -30,7 +30,8 @@ img {
     height: auto;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus):not(:active),
+input.visually-hidden {
     position: absolute;
 
     width: 1px;
@@ -1931,6 +1932,389 @@ img {
     }
 
 }
+
+
+// ----------------------------------------------------------
+// Файл blocks/animation.less
+@keyframes bounce {
+    0%   { transform: translateY(-2000px); }
+    70%  { transform: translateY(30px);    }
+    90%  { transform: translateY(-10px);   }
+    100% { transform: translateY(0);       }
+}
+
+@keyframes shake {
+    0%, 100%                { transform: translateX(0);     }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80%      { transform: translateX(10px);  }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/modal.less
+.modal_login {
+    position: fixed;
+    z-index: 102;
+
+    display: none;
+
+    left: 50%;
+    // transform:translateX(-51%);
+    margin-left: -162px;
+    top: 136px;    
+
+    width: 280px;
+    padding: 35px 20px 35px;
+
+    color: #000000;
+    text-align: center;
+
+    background-color: #f8f5f2;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+.modal_show {
+    display: block;
+
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
+
+.modal_error {
+    animation-name: shake;
+    animation-duration: 0.6s;
+}
+
+.modal-description {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.login_form p {
+    margin: 0;
+
+    margin-bottom: 10px;
+}
+
+.login_icon_user,
+.login_icon_password {
+    box-sizing: border-box;
+    width: 280px;
+    padding: 15px 20px;
+    padding-right: 40px;
+
+    font: inherit;
+    color: #000000;
+    font-weight: bold;
+
+    background-color: #ffffff;
+    border: 1px solid #e5ddd5;
+
+    &::placeholder {
+        color: #000000;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+        order: 1px solid #999999;
+    }
+}
+
+.login_icon_user {
+    background-image: url(../img/user.svg);
+    background-repeat: no-repeat;
+    background-position: 240px center;
+    background-size: 20px 20px;
+}
+
+.login_icon_password {
+    background-image: url(../img/lock.svg);
+    background-repeat: no-repeat;
+    background-position: 240px center;
+    background-size: 20px 20px;
+}
+
+.login_help {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 20px 0;
+}
+
+.login_checkbox {
+    position: relative;
+
+    padding-left: 40px;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        .checkbox_indicator {
+            border: 1px solid #d5c9bd;
+        }
+    }
+
+    &:active {
+        .checkbox_indicator {
+            background-color: #d5c9bd;
+        }
+    }
+}
+
+.checkbox_indicator {
+    position: absolute;
+
+    top: -2px;
+    left: 0;
+
+    width: 31px;
+    height: 31px;
+
+    border: 1px solid #e5ddd5;
+    background-color: #ffffff;
+
+    &:hover,
+    &:focus {
+        border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+        background-color: #d5c9bd;
+    }
+}
+
+.login_checkbox input[type="checkbox"]:focus + .checkbox_indicator {
+    border-color: #d5c9bd;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.login_checkbox input[type="checkbox"]:checked + .checkbox_indicator::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 31px;
+    height: 31px;
+
+    background-image: url(../img/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 16px;
+}
+
+.restore {
+    color: #000000;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.modal_login__button {
+    width: 130px;
+
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+
+    background-color: #826550;
+    
+    border: none;
+
+    &:hover,
+    &:focus {
+        background-color: #6a4d38;
+        border: none;
+    }
+
+    &:active {
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:disabled {
+        background-color: #aeaeae;
+
+        cursor: default;
+
+        &:active {
+            color: #ffffff;
+        }
+    }
+}
+
+.modal_login__descr {
+    display: none;
+}
+
+.modal_close {
+    position: absolute;
+
+    right: 20px;
+    bottom: 34px;
+
+    width: 130px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    font: inherit;
+    font-weight: bold;
+
+    border-radius: 0;
+    border: 1px solid #e5ddd5;
+
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        border: 1px solid #d5cabe;
+    }
+    
+    &:active {
+        color: rgba(0, 0, 0, 0.3);
+        
+        background-color: #d5c9bd;
+    }
+}
+
+@media (min-width: @tablet-width) {
+    .modal_login {
+        width: 320px;
+
+        padding: 55px 70px;
+        margin-left: -230px;
+
+        h2 {
+            font-size: 40px;
+            line-height: 40px;
+        }
+    }
+
+    .login_icon_user,
+    .login_icon_password {
+        width: 320px;
+
+        font-size: 24px;
+        line-height: 30px;
+
+        background-position: 280px center;
+    }
+
+    .modal_login__button {
+        width: 320px;
+    }
+
+    .modal_login__descr {
+        display: inline;
+    }
+
+    .modal_close {
+        position: absolute;
+
+        margin: 0;
+        padding: 0;
+
+        top: 55px;
+        right: -75px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 0;
+
+        border: none;
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            left: 2px;
+            top: 19px;
+
+            width: 36px;
+            height: 2px;
+
+            background-color: #ffffff;
+
+            border-radius: 1px;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover,
+        &:focus {
+            border: none;
+
+            &::before,
+            &::after {
+                background-color: #d5cabe;
+            }
+        }
+
+        &:active {
+            background-color: transparent;
+            
+            &::before,
+            &::after {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.overlay_show {
+    display: block;
+
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
+
+
 
 // @media (min-width: @tablet-width)
 // @media (min-width: @desktop-width)
