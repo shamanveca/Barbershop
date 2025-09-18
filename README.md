@@ -11,9 +11,6 @@
 - На данный момент сверстана только Главная страница. Еще 2 в процессе.
 
 ### Версия для Телефона
-<div>
-  <img width="549" height="1136" alt="image" src="https://github.com/user-attachments/assets/301451d2-d8ea-43da-8626-779b7e44ffe0" />
-  <img width="408" height="1255" alt="image" src="https://github.com/user-attachments/assets/1e307da3-a1bf-4213-b3ce-48182f6522fe" />
+<img width="419" height="936" alt="image" src="https://github.com/user-attachments/assets/77ef3657-6e87-49ec-92b2-543f58326616" />
+<img width="410" height="1155" alt="image" src="https://github.com/user-attachments/assets/0701d328-2a2b-4b86-8394-3b5780f67f03" />
 
-
-</div>
