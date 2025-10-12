@@ -2359,5 +2359,618 @@ input.visually-hidden {
 
 
 
+// ----------------------------------------------------------
+// Файл blocks/page-form.less
+.page-form {
+    box-sizing: border-box;
+
+    min-width: 320px;
+
+    padding: 30px 20px;
+    padding-bottom: 40px;
+
+    color: @color-black;
+
+    background-color: @bg-lightgrey;
+
+
+    @media (min-width: @tablet-width) {
+        position: relative;
+
+        padding: 50px 65px;
+        padding-bottom: 75px;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            top: -424px;
+            left: 0;
+
+            // width: 384px;
+            // height: 40px;
+
+            border: 384px solid transparent;
+            border-left: 0px solid @bg-lightgrey;
+            border-bottom: 40px solid @bg-lightgrey;
+        }
+
+        &::after {
+            content: "";
+
+            position: absolute;
+
+            top: -424px;
+            right: 0;
+
+            // width: 384px;
+            // height: 40px;
+
+            border: 384px solid transparent;
+            border-right: 0px solid @bg-lightgrey;
+            border-bottom: 40px solid @bg-lightgrey;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        padding: 50px 120px;
+        padding-bottom: 85px;
+
+        &::before {
+            top: -670px;
+            
+            border: 600px solid transparent;
+            border-left: 0px solid @bg-lightgrey;
+            border-bottom: 70px solid @bg-lightgrey;
+        }
+
+        &::after {
+            top: -670px;
+
+            border: 600px solid transparent;
+            border-right: 0px solid @bg-lightgrey;
+            border-bottom: 70px solid @bg-lightgrey;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Файл blocks/page-iner.less
+// .page-iner .page-header {
+//     @media (min-width: @tablet-width) {
+//         &__logo {
+//             height: 215px;
+
+//             background-image: url(../img/form-back-tablet.jpg);
+//             background-position: center -75px;
+//             background-size: 768px auto;
+//         }
+//     }
+
+//     @media (min-width: @desktop-width) {
+//         &__logo {
+//             height: 320px;
+
+//             background-image: url(../img/back-tablet.jpg);
+//             background-position: center -100px;
+//             background-size: cover;
+//         }
+//     }
+// }
+
+// ----------------------------------------------------------
+// Файл blocks/form.less
+.form {
+    position: relative;
+
+    margin: 0 auto;
+    width: 280px;
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 30px;
+
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__link-index {
+        display: none;
+    }
+
+    &__attribute {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 40px;
+
+        border: none;
+    }
+
+    &__attribute-title {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 35px;
+
+        font-size: 20px;
+        line-height: 27px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__button {
+        width: 280px;
+        font: inherit;
+        font-weight: bold;
+
+        color: @color-white;
+
+        background-color: @color-brown;
+
+        border: none;
+
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: @color-brown-dark;
+            border: none;
+        }
+
+        &:active {
+            color: @color-white-opacity;
+            border: none;
+        }
+
+        &:disabled {
+            background-color: @color-grey;
+
+            cursor: default;
+
+            &:active {
+                color: @color-white;
+            }
+        }
+    }
+
+    @media (min-width: @tablet-width) {
+        width: 639px;
+
+        &__title {
+            margin-bottom: 70px;
+            padding-top: 10px;
+
+            font-size: 40px;
+            line-height: 40px;
+            text-align: left;
+        }
+
+        &__link-index {
+            display: block;
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+        }
+
+        &__attribute {
+            margin-bottom: 50px;
+        }
+
+        &__attribute-title {
+            position: relative;
+
+            margin-bottom: 45px;
+
+            font-size: 30px;
+            line-height: 30px;
+
+            &::before,
+            &::after {
+                content: "";
+
+                position: absolute;
+
+                top: 50%;
+                left: -160px;
+
+                width: 135px;
+                height: 1px;
+
+                background-color: @color-border;
+            }
+
+            &::after {
+                left: auto;
+                right: -160px;
+            }
+        }
+
+        &__button {
+            width: 640px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 960px;
+
+        &__attribute-title {
+            margin-bottom: 55px;
+
+            &::before,
+            &::after {
+                width: 280px;
+
+                left: -320px;
+            }
+
+            &::after {
+                left: auto;
+                right: -320px;
+            }
+        }
+
+        &__button {
+            width: 960px;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Файл blocks/contact-information.less
+.contact-information {
+    &__list {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 30px;
+
+        list-style: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 0;
+        padding: 15px 20px;
+
+        font: inherit;
+
+        width: 280px;
+
+        border: 1px solid @color-border;
+
+        font-size: 18px;
+        line-height: 30px;
+        color: @color-black;
+
+        &--textarea {
+            min-height: 110px;
+        }
+
+        &::placeholder {
+            font-size: 18px;
+            line-height: 30px;
+            color: @color-black;
+        }
+
+        &:hover,
+        &:focus {
+          border-color: @color-btn-active;
+        }
+
+        &:active {
+            border-color: @color-modalLogin-input;
+        }
+    }
+
+    @media (min-width: @tablet-width) {
+        &__list {
+            margin-bottom: 35px;
+
+            &--fio {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__item {
+            margin-bottom: 0px;
+        }
+
+        &__input {
+            font-size: 24px;
+
+            &--textarea {
+                min-height: 210px;
+            }
+
+            &::placeholder{
+                font-size: 24px;
+            }
+
+            &--surname,
+            &--name,
+            &--middle-name {
+                width: 213px;
+            }
+
+            &--name,
+            &--middle-name {
+                margin-left: -1px;
+            }
+
+            &--telephone {
+                margin-bottom: 35px;
+            }
+
+            &--telephone,
+            &--email,
+            &--textarea {
+                width: 640px;
+            }
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        &__list {
+
+            &--fio {
+                justify-content: space-between;
+            }
+
+            &--contacts {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+
+        &__input {
+            &--surname,
+            &--name,
+            &--middle-name {
+                width: 295px;
+            }
+
+            &--name,
+            &--middle-name {
+                margin-left: 0;
+            }
+
+            &--telephone {
+                margin-bottom: 0;
+            }
+
+            &--telephone,
+            &--email {
+                width: 462px;
+            }
+
+            &--textarea {
+                width: 960px;
+            }
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Файл blocks/beard-model.less
+.beard-model {
+    &__list {
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+        padding-right: 12px;
+
+        list-style: none;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__item-lable {
+        position: relative;
+
+        display: block;
+
+        &:hover .beard-model__name::before,
+        &:focus .beard-model__name::before {
+            border-color: @color-btn-active;
+        }
+
+        &:active .beard-model__name::before {
+            background-color: @color-btn-active;
+        }
+
+        &:hover .beard-model__item--input-condition:checked + .beard-model__name::after,
+        &:focus .beard-model__item--input-condition:checked + .beard-model__name::after {
+            border-color: @color-btn-active;
+        }
+    }
+
+    &__name {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        padding-top: 60px;
+
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: lowercase;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 50px;
+            height: 50px;
+
+            background-color: @color-white;
+
+            border: 1px solid @color-border;
+            border-radius: 50%;
+        }
+    }
+
+    &__item--input-condition:checked + &__name::after {
+        content: "";
+
+        position: absolute;
+
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 20px;
+        height: 20px;
+
+        background-color: @color-white;
+        border: 1px solid @color-border;
+        border-radius: 50%;
+    }
+
+    @media (min-width: @tablet-width) {
+        &__list {
+            display: flex;
+            gap: 0;
+            justify-content: space-between;
+        }
+
+        &__item {
+            width: 80px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        &__list {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Файл blocks/extra-services.less
+.extra-services {
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-lable {
+        position: relative;
+
+        font-size: 18px;
+        line-height: 30px;
+
+        padding-left: 60px;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            top: -6px;
+            left: 0;
+
+            width: 35px;
+            height: 35px;
+
+            background-color: @color-white;
+
+            border: 1px solid @color-border;
+        }
+
+        &:hover::before {
+            border-color: @color-btn-active;
+        }
+
+        &:active::before {
+            background-color: @color-btn-active;
+        }
+    }
+
+    &__item--input-condition:focus + &__item-lable::before{
+        border-color: @color-btn-active;
+    }
+
+    &__item--input-condition:active + &__item-lable::before{
+        background-color: @color-btn-active;
+    }
+
+    &__item--input-condition:checked + &__item-lable::after {
+        content: "";
+
+        position: absolute;
+
+        top: -6px;
+        left: 0;
+
+        width: 35px;
+        height: 35px;
+
+        background-image: url(../img/check.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 22px 16px;
+    }
+
+    @media (min-width: @tablet-width) {
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 30px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        &__list {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/form.less
+
 // @media (min-width: @tablet-width)
 // @media (min-width: @desktop-width)
