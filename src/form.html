@@ -12,7 +12,7 @@
     
     <title>Барбершоп "Бородинский"</title>
 </head>
-<body>
+<body class="page-iner">
     <header class="page-header">
         <a class="page-header__logo" href="index.min.html">
             <picture>
@@ -67,7 +67,7 @@
 
     <main class="page-form">
         <section class="form">
-            <h1 class="form__title">Записаться на стрижку</h1>
+            <h1 class="form__title">Запись на стрижку</h1>
 
             <a class="form__link-index  button" href="index.min.html">На главную</a>
 
@@ -75,32 +75,37 @@
                 <fieldset class="form__attribute  contact-information">
                     <legend class="visually-hidden">Контактная Информация</legend>
 
-                    <ul class="contact-information__list">
+                    <ul class="contact-information__list  contact-information__list--fio">
                         <li class="contact-information__item">
                             <label class="visually-hidden" for="surname">Фамилия</label>
-                            <input class="contact-information__input" id="surname" type="text" name="surname" placeholder="Фамилия">
+                            <input class="contact-information__input  contact-information__input--surname" 
+                            id="surname" type="text" name="surname" placeholder="Фамилия">
                         </li>
 
                         <li class="contact-information__item">
                             <label class="visually-hidden" for="name">Имя</label>
-                            <input class="contact-information__input" id="name" type="text" name="name" placeholder="Имя">
+                            <input class="contact-information__input  contact-information__input--name" 
+                            id="name" type="text" name="name" placeholder="Имя">
                         </li>
 
                         <li class="contact-information__item">
                             <label class="visually-hidden" for="middle-name">Отчество</label>
-                            <input class="contact-information__input" id="middle-name" type="text" name="middle-name" placeholder="Отчество">
+                            <input class="contact-information__input  contact-information__input--middle-name" 
+                            id="middle-name" type="text" name="middle-name" placeholder="Отчество">
                         </li>
                     </ul>
 
-                    <ul class="contact-information__list">
+                    <ul class="contact-information__list  contact-information__list--contacts">
                         <li class="contact-information__item">
                             <label class="visually-hidden" for="telephone">Контактный телефон</label>
-                            <input class="contact-information__input" id="telephone" type="tel" name="telephone" placeholder="Контактный телефон">
+                            <input class="contact-information__input  contact-information__input--telephone" 
+                            id="telephone" type="tel" name="telephone" placeholder="Контактный телефон">
                         </li>
 
                         <li class="contact-information__item">
                             <label class="visually-hidden" for="email">Контактный e-mail</label>
-                            <input class="contact-information__input" id="email" type="email" name="email" placeholder="Контактный e-mail">
+                            <input class="contact-information__input  contact-information__input--email" 
+                            id="email" type="email" name="email" placeholder="Контактный e-mail">
                         </li>
                     </ul>
 
