@@ -7,6 +7,7 @@
 @color-white: #ffffff;
 @color-white-opacity: rgba(255, 255, 255, 0.3);
 @color-brown: #826550;
+@color-red: red;
 
 @color-brown--mobile-nav-link-top: #886e5b;
 @color-brown--mobile-nav-link-bottom: #71543f;
@@ -34,11 +35,51 @@
 
 @color-modalLogin-input: #999999;
 
+@shadow-black-op75: rgba(0, 0, 0, 0.75);
+
 @tablet-width: 768px;
 @desktop-width: 1200px;
 @mobile-width-only: 767px;
 @retina-dpi: 144dpi;
 @retina-dppx: 1.5dppx;
+
+
+// Файл blocks/animation.less
+@keyframes bounce {
+    0%   { transform: translateY(-2000px); }
+    70%  { transform: translateY(30px);    }
+    90%  { transform: translateY(-10px);   }
+    100% { transform: translateY(0);       }
+}
+
+@keyframes shake {
+    0%, 100%                { transform: translateX(0);     }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80%      { transform: translateX(10px);  }
+}
+
+@keyframes opas_overlay {
+    0%   { opacity: 0;     }
+    25%  { opacity: 0.075; }
+    50%  { opacity: 0.15;  }
+    75%  { opacity: 0.225; }
+    100% { opacity: 0.3;   }
+}
+
+@keyframes opas {
+    0%   { opacity: 0;    }
+    10%  { opacity: 0.1;  }
+    20%  { opacity: 0.2;  }
+    30%  { opacity: 0.3;  }
+    40%  { opacity: 0.4;  }
+    50%  { opacity: 0.5;  }
+    60%  { opacity: 0.6;  }
+    70%  { opacity: 0.7;  }
+    80%  { opacity: 0.8;  }
+    90%  { opacity: 0.9;  }
+    95%  { opacity: 0.95; }
+    100% { opacity: 1;    }
+}
 
 
 // -----------------------------------------------------------
@@ -113,6 +154,7 @@ input.visually-hidden {
         background-color: @color-btn-active;
     }
 }
+
 
 // -----------------------------------------------------------
 // Файл mixins.less
@@ -1978,22 +2020,6 @@ input.visually-hidden {
 
 
 // ----------------------------------------------------------
-// Файл blocks/animation.less
-@keyframes bounce {
-    0%   { transform: translateY(-2000px); }
-    70%  { transform: translateY(30px);    }
-    90%  { transform: translateY(-10px);   }
-    100% { transform: translateY(0);       }
-}
-
-@keyframes shake {
-    0%, 100%                { transform: translateX(0);     }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-    20%, 40%, 60%, 80%      { transform: translateX(10px);  }
-}
-
-
-// ----------------------------------------------------------
 // Файл blocks/modal.less
 .modal_login {
     position: fixed;
@@ -2335,6 +2361,9 @@ input.visually-hidden {
     }
 }
 
+
+// ----------------------------------------------------------
+// Файл blocks/overlay.less
 .overlay {
     position: fixed;
     z-index: 101;
@@ -2348,15 +2377,21 @@ input.visually-hidden {
 
     background-color: @color-black;
     opacity: 0.3;
+
+    &--login-show {
+        display: block;
+
+        animation-name: bounce;
+        animation-duration: 0.6s;
+    }
+
+    &--popup-show {
+        display: block;
+
+        animation-name: opas_overlay;
+        animation-duration: 0.4s;
+    }
 }
-
-.overlay_show {
-    display: block;
-
-    animation-name: bounce;
-    animation-duration: 0.6s;
-}
-
 
 
 // ----------------------------------------------------------
@@ -2677,6 +2712,15 @@ input.visually-hidden {
         }
     }
 
+    &__input--error {
+        color: @color-red;
+
+        border-color: @color-red;
+
+        animation-name: shake;
+        animation-duration: 0.6s;
+    }
+
     @media (min-width: @tablet-width) {
         &__list {
             margin-bottom: 35px;
@@ -2964,6 +3008,117 @@ input.visually-hidden {
     @media (min-width: @desktop-width) {
         &__list {
             grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/popup-form.less
+.popup-form {
+    position: fixed;
+
+    z-index: 103;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+
+    box-sizing: border-box;
+
+    width: 320px;
+
+    padding: 50px 0;
+
+    text-align: center;
+
+    color: @color-black;
+
+    background-color: @color-white;
+
+    box-shadow: 0 30px 50px @shadow-black-op75;
+
+    &--success-show {
+        display: block;
+
+        animation-name: opas;
+        animation-duration: 0.4s;
+    }
+
+    &--fail-show {
+        display: block;
+
+        animation-name: opas;
+        animation-duration: 0.4s;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: bold;
+
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 35px;
+
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    &__button {
+        width: 180px;
+        
+        margin-left: 70px;
+
+        font: inherit;
+        font-weight: bold;
+
+
+        color: @color-white;
+
+        background-color: @color-brown;
+
+        border: none;
+
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: @color-brown-dark;
+            border: none;
+        }
+
+        &:active {
+            color: @color-white-opacity;
+            border: none;
+        }
+    }
+
+    @media (min-width: @tablet-width) {
+        &__button {
+            width: 150px;
+
+            margin-left: 85px;
+        }
+
+        &--success {
+            width: 460px;
+        }
+
+        &__button-success {
+            width: 320px;
+
+            margin-left: 70px;
         }
     }
 }
