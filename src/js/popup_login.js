@@ -21,7 +21,7 @@ try {
 login_button.addEventListener("click", function (evt) {
     evt.preventDefault();
     popup.classList.add("modal_show");
-    overlay.classList.add("overlay_show");
+    overlay.classList.add("overlay--login-show");
 
     if (storage) {
         login.value = storage;
@@ -34,14 +34,14 @@ login_button.addEventListener("click", function (evt) {
 close_popup.addEventListener("click", function (evt) {
     evt.preventDefault();
     popup.classList.remove("modal_show");
-    overlay.classList.remove("overlay_show");
+    overlay.classList.remove("overlay--login-show");
     popup.classList.remove("modal_error");
 });
 
 overlay.addEventListener("click", function (evt) {
     evt.preventDefault();
     popup.classList.remove("modal_show");
-    overlay.classList.remove("overlay_show");
+    overlay.classList.remove("overlay--login-show");
     popup.classList.remove("modal_error");
 });
 
@@ -68,7 +68,7 @@ window.addEventListener("keydown", function (evt) {
         if (popup.classList.contains("modal_show")) {
             evt.preventDefault();
             popup.classList.remove("modal_show");
-            overlay.classList.remove("overlay_show");
+            overlay.classList.remove("overlay--login-show");
             popup.classList.remove("modal_error");
         }
     }
