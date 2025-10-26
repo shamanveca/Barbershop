@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css-min/style.min.css">
+
+    <!-- Шрифт PT Sans Narrow -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Барбершоп "Бородинский"</title>
+</head>
+<body class="page-iner">
+    <header class="page-header">
+        <a class="page-header__logo" href="index.min.html">
+            <picture>
+                <source media="(min-width: 1200px)" srcset="./img/logotype-desktop.svg">
+                <source media="(min-width: 768px)" srcset="./img/logotype-tablet.svg">
+                <img class="page-header__logo-img" src="./img/mobile_logo.svg" width="226" height="30" alt="Барбершоп Бородинский">
+            </picture> 
+        </a>
+
+        <nav class="main-nav  main-nav--closed  main-nav--nojs">
+            <button class="main-nav__toggle" type="button">
+                <span class="visually-hidden">Открыть меню</span>
+            </button>
+            
+            <div class="main-nav__wrapper">
+                <ul class="main-nav__list site-list">
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="index.min.html">Главная</a>
+                    </li>
+
+                    <li class="site-list__item  site-list__item--active">
+                        <a class="site-list__link">Наши работы</a>
+                    </li>
+
+                    <li class="site-list__item">
+                        <a class="site-list__link"  href="form.min.html">Записаться</a>
+                    </li>
+
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="#">Контакты</a>
+                    </li>
+
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="#">HTML Academy</a>
+                    </li>
+                </ul>
+
+                <ul class="main-nav__list  user-list">
+                    <li class="user-list__item">
+                        <a class="user-list__login" href="#"> 
+                             <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+                                <polygon points="7.01 7 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+                             </svg>
+                            Войти
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-works">
+        <section class="works">
+            <h1 class="works__title">Наши работы</h1>
+
+            <a class="works__link-index  button" href="index.min.html">На главную</a>
+
+            <article class="works-item works-item--work-of-month">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./img/photo-1-desktop 1x, ./img/photo-1-tablet.jpg 2x">
+                        <source media="(min-width: 768px)" srcset="./img/photo-1-tablet.jpg 1x, ./img/photo-1-tablet.jpg 2x">
+                        <img class="works-item__image" src="./img/photo-1-mobile.jpg" srcset="./img/photo-1-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Лжепётр Мчиславский</h2>
+                    <blockquote class="works-item__text">Где я только не стригся, но так как делаете это вы — не умеет никто другой! Ещё раз спасибо и до скорого!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритьё</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--mustache">Усы</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./img/photo-2-desktop.jpg 1x, ./img/photo-2-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" srcset="./img/photo-2-tablet.jpg 1x, ./img/photo-2-tablet.jpg 2x">
+                        <img class="works-item__image" src="./img/photo-2-mobile.jpg" srcset="./img/photo-2-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Саша Мальцев</h2>
+                    <blockquote class="works-item__text">Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./img/photo-3-desktop.jpg 1x, ./img/photo-3-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" srcset="./img/photo-3-tablet.jpg 1x, ./img/photo-3-tablet.jpg 2x">
+                        <img class="works-item__image" src="./img/photo-3-mobile.jpg" srcset="./img/photo-3-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Владимир Иваныч</h2>
+                    <blockquote class="works-item__text">К зимнему сезону — готов!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритьё</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--mustache">Усы</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./img/photo-4-desktop.jpg 1x, ./img/photo-4-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" srcset="./img/photo-4-tablet.jpg 1x, ./img/photo-4-tablet.jpg 2x">
+                        <img class="works-item__image" src="./img/photo-4-mobile.jpg" srcset="./img/photo-4-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Винстон Синий</h2>
+                    <blockquote class="works-item__text">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="price">
+            <h1 class="price__title">Прейскурант</h1>
+
+            <table class="price__table  table">
+                <tr>
+                    <td class="table__row-number">1</td>
+                    <th class="table__row-title">Классическая стрижка</th>
+                    <td>
+                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                    </td>
+                    <td>1 500 руб.</td>
+                </tr>
+
+                <tr>
+                    <td class="table__row-number">2</td>
+                    <th class="table__row-title">Современный вариант</th>
+                    <td>
+                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                    </td>
+                    <td>1 500 руб.</td>
+                </tr>
+
+                <tr>
+                    <td class="table__row-number">3</td>
+                    <th class="table__row-title">Индивидуальный подход</th>
+                    <td>
+                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                    </td>
+                    <td>2 000 руб.</td>
+                </tr>
+
+                <tr>
+                    <td class="table__row-number">4</td>
+                    <th class="table__row-title">Бритьё бороды</th>
+                    <td>
+                        <span class="table--brackets">(</span>без мытья<span class="table--brackets">)</span>
+                    </td>
+                    <td>500 руб.</td>
+                </tr>
+
+                <tr>
+                    <td class="table__row-number">5</td>
+                    <th class="table__row-title">Бритьё головы</th>
+                    <td>
+                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                    </td>
+                    <td>1 000 руб.</td>
+                </tr>
+            </table>
+        </section>
+
+        <article class="discount">
+            <p class="discount__conditions">C 10:00 до 14:00 скидка 20%</p>
+        </article>
+    </main>
+
+    <footer class="page-footer">
+        <div class="page-footer__wrapper">
+            <div class="page-footer__contacts  contacts">
+                <b class="contacts__title">Барбершоп "Бородинский"</b>
+                <p class="contacts__text">
+                    г. Санкт-Петербург, ул. Большая Конюшенная 19/8<br> 
+                    <a class="contacts__phone" href="tel:+78125556666">
+                        <span class="contacts__phone--mobile">Тел.:</span>
+                        +7 (812) 555-66-66
+                    </a>
+                </p>
+            </div>
+
+            <div class="page-footer__social  social">
+                <b class="social__title">Давайте дружить!</b>
+
+                <ul class="social__list">
+                    <li class="social__item">
+                        <a class="social__link  social__link--vkontakte1" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="15" viewBox="0 0 26.14 14.91">
+                                <path d="M26 13.47l-.09-.17a13.55 13.55 0 0 0-2.6-3q-.87-.83-1.1-1.12A1 1 0 0 1 22 8a10.27 10.27 0 0 1 
+                                1.22-1.78l.88-1.16q2.35-3.13 2-4L26 .94a.8.8 0 0 0-.4-.22 2.14 2.14 0 0 0-.87 0h-3.92a.51.51 0 0 0-.27 
+                                0h-.3a.6.6 0 0 0-.15.14.93.93 0 0 0-.14.24 22.22 22.22 0 0 1-1.46 3.06q-.5.84-.93 1.46a7 7 0 0 1-.71.91 
+                                4.94 4.94 0 0 1-.52.47q-.23.18-.35.15l-.23-.05a.9.9 0 0 1-.31-.33 1.49 1.49 0 0 1-.16-.53V1.6a3.14 3.14 
+                                0 0 0 0-.62 2.12 2.12 0 0 0-.14-.44.73.73 0 0 0-.28-.33 1.57 1.57 0 0 0-.46-.18A9 9 0 0 0 12.57 0a8.93 8.93 
+                                0 0 0-3.25.33 1.83 1.83 0 0 0-.52.41q-.25.3-.07.33a1.67 1.67 0 0 1 1.16.59l.08.16a2.6 2.6 0 0 1 .19.63 6.32 
+                                6.32 0 0 1 .12 1 10.59 10.59 0 0 1 0 1.7q-.07.71-.13 1.1a2.21 2.21 0 0 1-.18.64 2.69 2.69 0 0 1-.16.3l-.07.07a1 
+                                1 0 0 1-.37.07.86.86 0 0 1-.46-.19 3.27 3.27 0 0 1-.56-.52 7 7 0 0 1-.66-.93q-.37-.6-.76-1.42l-.22-.39q-.2-.38-.56-1.11t-.62-1.43A.9.9 
+                                0 0 0 5.2.9h-.07a.93.93 0 0 0-.22-.16A1.44 1.44 0 0 0 4.6.65L.87.68A1 1 0 0 0 .1.94L0 1a.44.44 0 0 0 0 .22 1.08 1.08 0 0 0 .08.37Q.9 3.53 
+                                1.86 5.31t1.66 2.87Q4.23 9.27 5 10.24t1 1.24l.37.41.34.33a8.06 8.06 0 0 0 1 .78 16.34 16.34 0 0 0 1.4.9 7.6 7.6 0 0 0 1.79.72 6.19 6.19 
+                                0 0 0 2 .22h1.57a1.08 1.08 0 0 0 .72-.3l.05-.07a.9.9 0 0 0 .1-.25 1.38 1.38 0 0 0 0-.37 4.48 4.48 0 0 1 .09-1.05 2.77 2.77 0 0 1 .23-.71 
+                                1.74 1.74 0 0 1 .29-.4 1.19 1.19 0 0 1 .23-.2h.11a.86.86 0 0 1 .77.21 4.52 4.52 0 0 1 .83.79q.39.47.93 1.05a6.41 6.41 0 0 0 1 .87l.27.16a3.31 
+                                3.31 0 0 0 .71.3 1.53 1.53 0 0 0 .76.07l3.48-.05a1.58 1.58 0 0 0 .8-.17.68.68 0 0 0 .34-.37 1.06 1.06 0 0 0 0-.46 1.71 1.71 0 0 0-.1-.36z" 
+                                fill="#fff"/>
+                            </svg>
+                            Мы в Вконтакте
+                        </a>
+                    </li>
+
+                    <li class="social__item">
+                        <a class="social__link  social__link--vkontakte2" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="15" viewBox="0 0 26.14 14.91">
+                                <path d="M26 13.47l-.09-.17a13.55 13.55 0 0 0-2.6-3q-.87-.83-1.1-1.12A1 1 0 0 1 22 8a10.27 10.27 0 0 1 
+                                1.22-1.78l.88-1.16q2.35-3.13 2-4L26 .94a.8.8 0 0 0-.4-.22 2.14 2.14 0 0 0-.87 0h-3.92a.51.51 0 0 0-.27 
+                                0h-.3a.6.6 0 0 0-.15.14.93.93 0 0 0-.14.24 22.22 22.22 0 0 1-1.46 3.06q-.5.84-.93 1.46a7 7 0 0 1-.71.91 
+                                4.94 4.94 0 0 1-.52.47q-.23.18-.35.15l-.23-.05a.9.9 0 0 1-.31-.33 1.49 1.49 0 0 1-.16-.53V1.6a3.14 3.14 
+                                0 0 0 0-.62 2.12 2.12 0 0 0-.14-.44.73.73 0 0 0-.28-.33 1.57 1.57 0 0 0-.46-.18A9 9 0 0 0 12.57 0a8.93 8.93 
+                                0 0 0-3.25.33 1.83 1.83 0 0 0-.52.41q-.25.3-.07.33a1.67 1.67 0 0 1 1.16.59l.08.16a2.6 2.6 0 0 1 .19.63 6.32 
+                                6.32 0 0 1 .12 1 10.59 10.59 0 0 1 0 1.7q-.07.71-.13 1.1a2.21 2.21 0 0 1-.18.64 2.69 2.69 0 0 1-.16.3l-.07.07a1 
+                                1 0 0 1-.37.07.86.86 0 0 1-.46-.19 3.27 3.27 0 0 1-.56-.52 7 7 0 0 1-.66-.93q-.37-.6-.76-1.42l-.22-.39q-.2-.38-.56-1.11t-.62-1.43A.9.9 
+                                0 0 0 5.2.9h-.07a.93.93 0 0 0-.22-.16A1.44 1.44 0 0 0 4.6.65L.87.68A1 1 0 0 0 .1.94L0 1a.44.44 0 0 0 0 .22 1.08 1.08 0 0 0 .08.37Q.9 3.53 
+                                1.86 5.31t1.66 2.87Q4.23 9.27 5 10.24t1 1.24l.37.41.34.33a8.06 8.06 0 0 0 1 .78 16.34 16.34 0 0 0 1.4.9 7.6 7.6 0 0 0 1.79.72 6.19 6.19 
+                                0 0 0 2 .22h1.57a1.08 1.08 0 0 0 .72-.3l.05-.07a.9.9 0 0 0 .1-.25 1.38 1.38 0 0 0 0-.37 4.48 4.48 0 0 1 .09-1.05 2.77 2.77 0 0 1 .23-.71 
+                                1.74 1.74 0 0 1 .29-.4 1.19 1.19 0 0 1 .23-.2h.11a.86.86 0 0 1 .77.21 4.52 4.52 0 0 1 .83.79q.39.47.93 1.05a6.41 6.41 0 0 0 1 .87l.27.16a3.31 
+                                3.31 0 0 0 .71.3 1.53 1.53 0 0 0 .76.07l3.48-.05a1.58 1.58 0 0 0 .8-.17.68.68 0 0 0 .34-.37 1.06 1.06 0 0 0 0-.46 1.71 1.71 0 0 0-.1-.36z" 
+                                fill="#fff"/>
+                            </svg>
+                            Мы в Вконтакте
+                        </a>
+                    </li>
+
+                    <li class="social__item">
+                        <a class="social__link  social__link--vkontakte3" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="15" viewBox="0 0 26.14 14.91">
+                                <path d="M26 13.47l-.09-.17a13.55 13.55 0 0 0-2.6-3q-.87-.83-1.1-1.12A1 1 0 0 1 22 8a10.27 10.27 0 0 1 
+                                1.22-1.78l.88-1.16q2.35-3.13 2-4L26 .94a.8.8 0 0 0-.4-.22 2.14 2.14 0 0 0-.87 0h-3.92a.51.51 0 0 0-.27 
+                                0h-.3a.6.6 0 0 0-.15.14.93.93 0 0 0-.14.24 22.22 22.22 0 0 1-1.46 3.06q-.5.84-.93 1.46a7 7 0 0 1-.71.91 
+                                4.94 4.94 0 0 1-.52.47q-.23.18-.35.15l-.23-.05a.9.9 0 0 1-.31-.33 1.49 1.49 0 0 1-.16-.53V1.6a3.14 3.14 
+                                0 0 0 0-.62 2.12 2.12 0 0 0-.14-.44.73.73 0 0 0-.28-.33 1.57 1.57 0 0 0-.46-.18A9 9 0 0 0 12.57 0a8.93 8.93 
+                                0 0 0-3.25.33 1.83 1.83 0 0 0-.52.41q-.25.3-.07.33a1.67 1.67 0 0 1 1.16.59l.08.16a2.6 2.6 0 0 1 .19.63 6.32 
+                                6.32 0 0 1 .12 1 10.59 10.59 0 0 1 0 1.7q-.07.71-.13 1.1a2.21 2.21 0 0 1-.18.64 2.69 2.69 0 0 1-.16.3l-.07.07a1 
+                                1 0 0 1-.37.07.86.86 0 0 1-.46-.19 3.27 3.27 0 0 1-.56-.52 7 7 0 0 1-.66-.93q-.37-.6-.76-1.42l-.22-.39q-.2-.38-.56-1.11t-.62-1.43A.9.9 
+                                0 0 0 5.2.9h-.07a.93.93 0 0 0-.22-.16A1.44 1.44 0 0 0 4.6.65L.87.68A1 1 0 0 0 .1.94L0 1a.44.44 0 0 0 0 .22 1.08 1.08 0 0 0 .08.37Q.9 3.53 
+                                1.86 5.31t1.66 2.87Q4.23 9.27 5 10.24t1 1.24l.37.41.34.33a8.06 8.06 0 0 0 1 .78 16.34 16.34 0 0 0 1.4.9 7.6 7.6 0 0 0 1.79.72 6.19 6.19 
+                                0 0 0 2 .22h1.57a1.08 1.08 0 0 0 .72-.3l.05-.07a.9.9 0 0 0 .1-.25 1.38 1.38 0 0 0 0-.37 4.48 4.48 0 0 1 .09-1.05 2.77 2.77 0 0 1 .23-.71 
+                                1.74 1.74 0 0 1 .29-.4 1.19 1.19 0 0 1 .23-.2h.11a.86.86 0 0 1 .77.21 4.52 4.52 0 0 1 .83.79q.39.47.93 1.05a6.41 6.41 0 0 0 1 .87l.27.16a3.31 
+                                3.31 0 0 0 .71.3 1.53 1.53 0 0 0 .76.07l3.48-.05a1.58 1.58 0 0 0 .8-.17.68.68 0 0 0 .34-.37 1.06 1.06 0 0 0 0-.46 1.71 1.71 0 0 0-.1-.36z" 
+                                fill="#fff"/>
+                            </svg>
+                            Мы в Вконтакте
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-footer__copyright  copyright">
+                <b class="copyright__text">Разработанно:</b>
+                <a class="copyright__link  button" href="#">Ссылка</a>
+            </div>
+       </div>
+    </footer>
+
+    <section class="modal modal_login">
+        <h2>Личный кабинет</h2>
+        <p class="modal-description">Введите свой логин и пароль, чтобы войти</p>
+        
+        <form class="login_form" action="#" method="post">
+            <p>
+                <label class="visually-hidden" for="user_login">Логин</label>
+                <input class="login_icon_user" id="user_login" type="text" name="login" placeholder="Логин">
+            </p>
+
+            <p>
+                <label class="visually-hidden" for="user_password">Пароль</label>
+                <input class="login_icon_password" id="user_password" type="password" name="password" placeholder="Пароль">
+            </p>
+
+            <p class="login_help">
+                <label class="login_checkbox">
+                    <input class="visually-hidden" type="checkbox" name="remember">
+                    <span class="checkbox_indicator"></span>
+                    Запомните меня
+                </label>
+
+                <a class="restore" href="#">Я забыл пароль!</a>
+            </p>
+            
+            <button class="modal_login__button  button" type="submit">
+                Войти <span class="modal_login__descr">в личный кабинет</span>
+            </button>
+        </form>
+        
+        <button class="modal_close" type="button">Закрыть</button>
+    </section>
+    <div class="overlay"></div>
+
+    <script src="./js-min/index.min.js"></script>
+
+</body>
+</html>
