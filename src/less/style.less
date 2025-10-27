@@ -24,6 +24,7 @@
 @color-tablet-cell: #404040;
 @color-tablet-cell-2: #4e4e4e;
 @color-tablet-cell-3: #353535;
+@color-tablet-border: #474747;
 
 @color-slider-toggle-border: #a5a5a5;
 @color-reviews-toggle-border: #92918f;
@@ -3125,7 +3126,725 @@ input.visually-hidden {
 
 
 // ----------------------------------------------------------
+// Файл blocks/page-works.less
+.page-works {
+    color: @color-black;
+
+    background-color: @bg-lightgrey;
+
+    &__price {
+        color: @color-white;
+
+        background-color: @color-tablet-cell-3;
+    }
+
+    @media (min-width: @tablet-width) {
+        &__wrapper {
+            width: 640px;
+
+            margin: 0 auto;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        &__wrapper {
+            width: 960px;
+
+            margin: 0 auto;
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/page-title.less
+.page-title {
+    margin: 0 auto;
+    padding: 30px 0;
+
+    color: #000000;
+    text-transform: uppercase;
+
+    &__title {
+        margin: 0;
+
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__link-inner {
+        display: none;
+    }
+
+    @media (min-width: @tablet-width) {
+        display: flex;
+        justify-content: space-between;
+
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-top: 58px;
+        padding-bottom: 40px;
+
+        &__title {
+            font-size: 40px;
+            line-height: 40px;
+            text-align: left;
+        }
+
+        &__link-inner {
+            align-self: center;
+
+            display: block;
+            margin-top: -5px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 960px;
+        padding-bottom: 80px;
+        padding-top: 60px;
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/works.less
+.works {
+    position: relative;
+
+    padding-bottom: 14px;
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        bottom: -34px;
+        z-index: 10;
+
+        width: 100%;
+        height: 34px;
+
+        background-image: linear-gradient(to top right, transparent 50%, @bg-lightgrey 50%), linear-gradient(to top left, transparent 50%, @bg-lightgrey 50%);
+        background-repeat: no-repeat;
+        background-position: 0 0, 100% 0;
+        background-size: 50.1% 100%;
+    }
+
+    @media (min-width: @tablet-width) {
+        padding: 0 64px;
+        padding-bottom: 27px;
+    }
+
+    @media (min-width: @desktop-width) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        width: 960px;
+        margin: 0 auto;
+        padding-bottom: 47px;
+    
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/works-item.less
+.works-item {
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    color: #000000;
+
+    &--work-of-month {
+        position: relative;
+
+        &::before {
+            content: "Работа месяца";
+
+            position: absolute;
+            top: 401px;
+            left: 20px;
+            z-index: 2;
+
+            width: 140px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-right: 11px;
+            padding-left: 16px;
+
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: @color-white;
+            text-transform: uppercase;
+
+            background-color: @color-brown;
+        }
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            top: 401px;
+            left: 180px;
+            z-index: 2;
+
+            width: 16px;
+            height: 50px;
+
+            background-image: linear-gradient(to top left, transparent 50%, @color-brown 50%), linear-gradient(to top right, @color-brown 50%, transparent 50%);
+        }
+    }
+
+    &__image-wrapper {
+        position: relative;
+
+        height: 176px;
+        margin: 0;
+
+        line-height: 0;
+        text-align: center;
+        
+        background-color: #e6ded6;
+
+        overflow: hidden;
+    }
+
+    &--work-of-month &__image-wrapper {
+        height: 480px;
+    }
+
+    &__review {
+        padding-top: 19px;
+        padding-right: 21px;
+        padding-left: 21px;
+        padding-bottom: 0;
+
+        border: 1px solid @color-border;
+        border-top: none;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 14px;
+
+        font-size: 24px;
+        line-height: 27px;
+        font-weight: bold;
+    }
+
+    &__text {
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+    &__parameter-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: 0;
+        margin-top: auto;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    &__parameter-item {
+        position: relative;
+
+        width: auto;
+        margin-bottom: 15px;
+        margin-right: 30px;
+        padding-left: 36px;
+
+        font-size: 16px;
+        text-transform: uppercase;
+
+        &--mustache {
+            padding-left: 46px;
+        }
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            width: 45px;
+            height: 21px;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            transform: translate(-30%, -50%);
+        }
+
+        &--haircut::before {
+            background-image: url(../img/scissors-icon.svg);
+        }
+
+        &--shaving::before {
+            background-image: url(../img/beard-icon.svg);
+        }
+
+        &--mustache::before {
+            background-image: url(../img/mustache-icon.svg);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width: @tablet-width) {
+        display: flex;
+        align-items: stretch;
+
+        margin-bottom: 41px;
+        padding: 0;
+
+        &--work-of-month::before {
+            top: 35px;
+            bottom: auto;
+            left: 0;
+        }
+
+        &--work-of-month::after {
+            top: 35px;
+            bottom: auto;
+            left: 160px;
+        }
+
+        &__image-wrapper,
+        &--work-of-month &__image-wrapper {
+            height: auto;
+        }
+
+        &__image-wrapper {
+            position: relative;
+
+            width: 270px;
+        }
+
+        &__image-wrapper::after {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+
+            width: calc(~"100% - 1px");
+            height: calc(~"100% - 1px");
+
+            border: 1px solid @color-border;
+            border-top: none;
+            border-right: none;
+        }
+
+        &__img {
+            position: relative;
+            z-index: 1;
+        }
+
+        &__review {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            width: calc(~"100% - 370px");
+            padding-top: 43px;
+            padding-right: 50px;
+            padding-bottom: 20px;
+            padding-left: 50px;
+
+            border-top: 1px solid #e5ddd5;
+            border-left: none;
+        }
+
+        &__title {
+            margin-bottom: 26px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        &:first-child &__image-wrapper {
+            width: 480px;
+        }
+
+        &:first-child &__review {
+            width: 396px;
+            padding-top: 128px;
+            padding-right: 42px;
+            padding-bottom: 12px;
+            padding-left: 42px;
+        }
+
+        &:first-child &__parameter-item {
+            margin-bottom: 15px;
+        }
+
+        &--work-of-month::before {
+            top: 26px;
+            right: 0;
+            bottom: auto;
+            left: auto;
+        }
+
+        &--work-of-month::after {
+            top: 26px;
+            right: 160px;
+            bottom: auto;
+            left: auto;
+
+            background-image: linear-gradient(to top left, @color-brown 50%, transparent 50%), linear-gradient(to top right, transparent 50%, @color-brown 50%);
+        }
+
+        &:not(:first-child) {
+            flex-direction: column;
+
+            width: 295px;
+        }
+
+        &:nth-child(3n + 1) {
+            margin-right: 0;
+        }
+
+        &__image-wrapper {
+            width: auto;
+        }
+
+        &__review {
+            flex-grow: 1;
+
+            width: auto;
+        }
+
+        &:not(:first-child) &__review {
+            padding-top: 30px;
+            padding-right: 35px;
+            padding-left: 35px;
+            padding-bottom: 10px;
+
+            border-top: none;
+            border-left: 1px solid #e5ddd5;
+        }
+
+        &__text {
+            margin-bottom: 25px;
+        }
+
+        &--work-of-month &__text {
+            padding-right: 85px;
+        }
+
+        &__parameter-item {
+            width: auto;
+            margin-right: 35px;
+            margin-bottom: 21px;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Файл blocks/price.less
+.price {
+    position: relative;
+
+    padding-bottom: 20px;
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        bottom: -34px;
+        z-index: 10;
+
+        width: 100%;
+        height: 34px;
+
+        background-image: linear-gradient(to top right, transparent 50%, @color-tablet-cell-3 50%), linear-gradient(to top left, transparent 50%, @color-tablet-cell-3 50%);
+        background-repeat: no-repeat;
+        background-position: 0 0, 100% 0;
+        background-size: 50.1% 100%;
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 25px;
+        padding-top: 65px;
+
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__wrapper {
+        width: 280px;
+
+        margin: 0 auto;
+    }
+
+    &__table {
+        margin-bottom: 30px;
+    }
+
+    @media (min-width: @tablet-width) {
+        &__title {
+            padding-top: 80px;
+            margin-bottom: 45px;
+
+            font-size: 40px;
+            line-height: 40px;
+
+            text-align: left;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &__wrapper {
+            width: 640px;
+
+            margin: 0 auto;
+        }
+
+        &__table {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        padding-bottom: 80px;
+        
+        &__title {
+            padding-top: 70px;
+            margin-bottom: 50px;
+        }
+
+        &__wrapper {
+            width: 960px;
+
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__table {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/table.less
+// .table, td, th {
+//     border: 1px solid red;
+// }
+
+.table {
+    border-collapse: collapse;
+    // display: flex;
+
+    font-size: 20px;
+    line-height: 27px;
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__row-number {
+        display: none;
+    }
+
+    &__row-title {
+        width: 190px;
+
+        text-align: left;
+    }
+
+    &__row-comment {
+        width: 190px;
+        order: 1;
+    }
+
+    @media (min-width: @tablet-width) {
+        width: 100%;
+
+        td, th {
+            border: 1px solid @color-tablet-border;
+        }
+
+        &__row {
+            display: table-row;
+            margin: 0;
+        }
+
+        &__row-number {
+            box-sizing: border-box;
+
+            display: table-cell;
+
+            width: 70px;
+            padding: 15px 30px;
+            padding-bottom: 20px;
+
+            color: @color-white-opacity;
+        }
+
+        &__row-title {
+            box-sizing: border-box;
+
+            width: 250px;
+            padding: 15px 20px;
+            padding-bottom: 20px;
+
+            text-align: left;
+        }
+
+        &__row-comment {
+            box-sizing: border-box;
+
+            width: 160px;
+            padding: 15px 15px;
+            padding-bottom: 20px;
+        }
+
+        &__row-price {
+            box-sizing: border-box;
+
+            width: 160px;
+            padding: 15px 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+       width: auto;
+    }
+}
+
+
+// ----------------------------------------------------------
+// Файл blocks/discount.less
+.discount {
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 20px 40px;
+    padding-left: 20px;
+
+    border: 1px solid @color-tablet-border;
+
+    &__conditions {
+        position: relative;
+
+        margin: 0;
+        padding-left: 90px;
+
+        font-size: 20px;
+        line-height: 27px;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 58px;
+            height: 58px;
+
+            background-image: url(../img/clock_illustration.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 58px 58px;
+        }
+    }
+
+    @media (min-width: @tablet-width) {
+        padding: 40px 30px;
+
+        &__conditions {
+            padding-left: 160px;
+
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            &::before {
+
+                top: -20px;
+                width: 72px;
+                height: 72px;
+
+                background-size: 72px 72px;
+            }
+        }
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 270px;
+
+        // padding-top: 30px;
+
+        &__conditions {
+            padding: 0;
+            margin: 0 auto;
+            padding-top: 175px;
+
+            width: 142px;
+
+            font-size: 20px;
+            line-height: 27px;
+            font-weight: normal;
+
+            text-transform: none;
+            text-align: center;
+
+            &::before {
+                top: 0px;
+                width: 142px;
+                height: 142px;
+
+                background-size: 142px 142px;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------------------------
 // Файл blocks/form.less
 
 // @media (min-width: @tablet-width)
 // @media (min-width: @desktop-width)
+

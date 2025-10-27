@@ -66,17 +66,18 @@
     </header>
 
     <main class="page-works">
-        <section class="works">
-            <h1 class="works__title">Наши работы</h1>
+        <header class="page-title">
+            <h1 class="page-title__title">Наши работы</h1>
+            <a class="page-title__link-inner  button" href="index.min.html">На главную</a>
+        </header>
 
-            <a class="works__link-index  button" href="index.min.html">На главную</a>
-
+        <section class="page-works__works  works">
             <article class="works-item works-item--work-of-month">
                 <p class="works-item__image-wrapper">
                     <picture>
-                        <source media="(min-width: 1200px)" srcset="./img/photo-1-desktop 1x, ./img/photo-1-tablet.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="./img/photo-1-tablet.jpg 1x, ./img/photo-1-tablet.jpg 2x">
-                        <img class="works-item__image" src="./img/photo-1-mobile.jpg" srcset="./img/photo-1-mobile.jpg 2x" alt="Пример нашей работы">
+                        <source media="(min-width: 1200px)" width="480" height="480" srcset="./img/photo-1-desktop 1x, ./img/photo-1-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="480" srcset="./img/photo-1-tablet.jpg 1x, ./img/photo-1-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="480" src="./img/photo-1-mobile.jpg" srcset="./img/photo-1-mobile.jpg 2x" alt="Пример нашей работы">
                     </picture>
                 </p>
                 <div class="works-item__review">
@@ -93,9 +94,9 @@
             <article class="works-item">
                 <p class="works-item__image-wrapper">
                     <picture>
-                        <source media="(min-width: 1200px)" srcset="./img/photo-2-desktop.jpg 1x, ./img/photo-2-desktop.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="./img/photo-2-tablet.jpg 1x, ./img/photo-2-tablet.jpg 2x">
-                        <img class="works-item__image" src="./img/photo-2-mobile.jpg" srcset="./img/photo-2-mobile.jpg 2x" alt="Пример нашей работы">
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-2-desktop.jpg 1x, ./img/photo-2-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-2-tablet.jpg 1x, ./img/photo-2-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-2-mobile.jpg" srcset="./img/photo-2-mobile.jpg 2x" alt="Пример нашей работы">
                     </picture>
                 </p>
                 <div class="works-item__review">
@@ -110,9 +111,9 @@
             <article class="works-item">
                 <p class="works-item__image-wrapper">
                     <picture>
-                        <source media="(min-width: 1200px)" srcset="./img/photo-3-desktop.jpg 1x, ./img/photo-3-desktop.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="./img/photo-3-tablet.jpg 1x, ./img/photo-3-tablet.jpg 2x">
-                        <img class="works-item__image" src="./img/photo-3-mobile.jpg" srcset="./img/photo-3-mobile.jpg 2x" alt="Пример нашей работы">
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-3-desktop.jpg 1x, ./img/photo-3-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-3-tablet.jpg 1x, ./img/photo-3-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-3-mobile.jpg" srcset="./img/photo-3-mobile.jpg 2x" alt="Пример нашей работы">
                     </picture>
                 </p>
                 <div class="works-item__review">
@@ -128,9 +129,9 @@
             <article class="works-item">
                 <p class="works-item__image-wrapper">
                     <picture>
-                        <source media="(min-width: 1200px)" srcset="./img/photo-4-desktop.jpg 1x, ./img/photo-4-desktop.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="./img/photo-4-tablet.jpg 1x, ./img/photo-4-tablet.jpg 2x">
-                        <img class="works-item__image" src="./img/photo-4-mobile.jpg" srcset="./img/photo-4-mobile.jpg 2x" alt="Пример нашей работы">
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-4-desktop.jpg 1x, ./img/photo-4-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-4-tablet.jpg 1x, ./img/photo-4-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-4-mobile.jpg" srcset="./img/photo-4-mobile.jpg 2x" alt="Пример нашей работы">
                     </picture>
                 </p>
                 <div class="works-item__review">
@@ -143,60 +144,64 @@
             </article>
         </section>
 
-        <section class="price">
-            <h1 class="price__title">Прейскурант</h1>
+        <section class="page-works__price  price">
+            <div class="page-works__wrapper">
+                <h1 class="price__title">Прейскурант</h1>
 
-            <table class="price__table  table">
-                <tr>
-                    <td class="table__row-number">1</td>
-                    <th class="table__row-title">Классическая стрижка</th>
-                    <td>
-                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
-                    </td>
-                    <td>1 500 руб.</td>
-                </tr>
+                <div class="price__wrapper">
+                    <table class="price__table  table">
+                        <tr class="table__row">
+                            <td class="table__row-number">1</td>
+                            <th class="table__row-title">Классическая стрижка</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 500 руб.</td>
+                        </tr>
 
-                <tr>
-                    <td class="table__row-number">2</td>
-                    <th class="table__row-title">Современный вариант</th>
-                    <td>
-                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
-                    </td>
-                    <td>1 500 руб.</td>
-                </tr>
+                        <tr class="table__row">
+                            <td class="table__row-number">2</td>
+                            <th class="table__row-title">Современный вариант</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 500 руб.</td>
+                        </tr>
 
-                <tr>
-                    <td class="table__row-number">3</td>
-                    <th class="table__row-title">Индивидуальный подход</th>
-                    <td>
-                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
-                    </td>
-                    <td>2 000 руб.</td>
-                </tr>
+                        <tr class="table__row">
+                            <td class="table__row-number">3</td>
+                            <th class="table__row-title">Индивидуальный подход</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">2 000 руб.</td>
+                        </tr>
 
-                <tr>
-                    <td class="table__row-number">4</td>
-                    <th class="table__row-title">Бритьё бороды</th>
-                    <td>
-                        <span class="table--brackets">(</span>без мытья<span class="table--brackets">)</span>
-                    </td>
-                    <td>500 руб.</td>
-                </tr>
+                        <tr class="table__row">
+                            <td class="table__row-number">4</td>
+                            <th class="table__row-title">Бритьё бороды</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>без мытья<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">500 руб.</td>
+                        </tr>
 
-                <tr>
-                    <td class="table__row-number">5</td>
-                    <th class="table__row-title">Бритьё головы</th>
-                    <td>
-                        <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
-                    </td>
-                    <td>1 000 руб.</td>
-                </tr>
-            </table>
+                        <tr class="table__row">
+                            <td class="table__row-number">5</td>
+                            <th class="table__row-title">Бритьё головы</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 000 руб.</td>
+                        </tr>
+                    </table>
+
+                    <article class="price__discount  discount">
+                        <p class="discount__conditions">C 10:00 до 14:00 скидка 20%</p>
+                    </article>
+                </div>
+            </div>
         </section>
-
-        <article class="discount">
-            <p class="discount__conditions">C 10:00 до 14:00 скидка 20%</p>
-        </article>
     </main>
 
     <footer class="page-footer">
