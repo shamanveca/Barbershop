@@ -12,9 +12,9 @@
     
     <title>Барбершоп "Бородинский"</title>
 </head>
-<body>
+<body class="page-iner">
     <header class="page-header">
-        <a class="page-header__logo">
+        <a class="page-header__logo" href="index.min.html">
             <picture>
                 <source media="(min-width: 1200px)" srcset="./img/logotype-desktop.svg">
                 <source media="(min-width: 768px)" srcset="./img/logotype-tablet.svg">
@@ -29,16 +29,16 @@
             
             <div class="main-nav__wrapper">
                 <ul class="main-nav__list site-list">
-                    <li class="site-list__item  site-list__item--active">
-                        <a class="site-list__link">Главная</a>
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="index.min.html">Главная</a>
                     </li>
 
                     <li class="site-list__item">
                         <a class="site-list__link" href="photo.min.html">Наши работы</a>
                     </li>
 
-                    <li class="site-list__item">
-                        <a class="site-list__link" href="form.min.html">Записаться</a>
+                    <li class="site-list__item  site-list__item--active">
+                        <a class="site-list__link">Записаться</a>
                     </li>
 
                     <li class="site-list__item">
@@ -65,234 +65,157 @@
         </nav>
     </header>
 
-    <main class="page-main">
-        <h1 class="visually-hidden">Барбершоп "Бородинский" - истинно мужская классика</h1>
+    <main class="page-form">
+        <section class="form">
+            <h1 class="form__title">Запись на стрижку</h1>
 
-        <section class="stats">
-            <header class="stats__header">
-                <h2 class="visually-hidden">Статистика Барбершопа</h2>
+            <a class="form__link-index  button" href="index.min.html">На главную</a>
 
-                <b class="stats__slogan">Стрижка у нас это выгодно!</b>
-                <p class="stats__intro">Мужская стрижка требует точного подхода.
-                    Обратимся к статистике:
-                </p>
+            <form class="form__attributes" action="#" method="post">
+                <fieldset class="form__attribute  contact-information">
+                    <legend class="visually-hidden">Контактная Информация</legend>
 
-                <small class="stats__legend  stats__legend--top">
-                    <sup class="stats__legend-sup">*</sup> - приведенные данные ложь
-                </small>
-            </header>
+                    <ul class="contact-information__list  contact-information__list--fio">
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="surname">Фамилия</label>
+                            <input class="contact-information__input  contact-information__input--surname"
+                            id="surname" type="text" name="surname" placeholder="Фамилия"> 
+                        </li>
 
-            <table class="stats__list">
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        1 500<sup class="stats__value-sup">*</sup>
-                    </td>
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="name">Имя</label>
+                            <input class="contact-information__input  contact-information__input--name" 
+                            id="name" type="text" name="name" placeholder="Имя">
+                        </li>
 
-                    <td class="stats__field">
-                        рублей<br> вложений
-                    </td>
-                </tr>
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="middle-name">Отчество</label>
+                            <input class="contact-information__input  contact-information__input--middle-name" 
+                            id="middle-name" type="text" name="middle-name" placeholder="Отчество">
+                        </li>
+                    </ul>
 
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        7 200
-                    </td>
+                    <ul class="contact-information__list  contact-information__list--contacts">
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="telephone">Контактный телефон</label>
+                            <input class="contact-information__input  contact-information__input--telephone" 
+                            id="telephone" type="tel" name="telephone" placeholder="Контактный телефон">
+                        </li>
 
-                    <td class="stats__field">
-                        секунд<br> времени мастера
-                    </td>
-                </tr>
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="email">Контактный e-mail</label>
+                            <input class="contact-information__input  contact-information__input--email" 
+                            id="email" type="email" name="email" placeholder="Контактный e-mail">
+                        </li>
+                    </ul>
 
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        90 000
-                    </td>
+                    <ul class="contact-information__list">
+                        <li class="contact-information__item">
+                            <label class="visually-hidden" for="info-for-master">Доп. информация для мастера</label>
+                            <textarea class="contact-information__input  contact-information__input--textarea" 
+                            name="info-for-master" id="info-for-master" placeholder="Доп. информация для мастера"></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
 
-                    <td class="stats__field">
-                        постриженных<br> волос
-                    </td>
-                </tr>
+                <fieldset class="form__attribute  beard-model">
+                    <legend class="form__attribute-title">Выберите модель бороды:</legend>
 
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        500 000<sup class="stats__value-sup">*</sup>
-                    </td>
+                    <ul class="beard-model__list">
+                        <li class="beard-model__item">
+                            <label class="beard-model__item-lable" for="model-admiral">
+                                <input class="visually-hidden  beard-model__item--input-condition"  checked
+                                type="radio" name="models-group" id="model-admiral" value="admiral">
+                                <p class="beard-model__name">Адмирал</p>
+                                <img src="./img/beard-1.svg" width="52" height="49" alt="Маленькая борода">
+                            </label>
+                        </li>
 
-                    <td class="stats__field">
-                        лайков<br> и комплиментов
-                    </td>
-                </tr>
-            </table>
+                        <li class="beard-model__item">
+                            <label class="beard-model__item-lable" for="model-woodcutter">
+                                <input class="visually-hidden  beard-model__item--input-condition"
+                                type="radio" name="models-group" id="model-woodcutter" value="woodcutter">
+                                <p class="beard-model__name">Лесоруб</p>
+                                <img src="./img/beard-2.svg" width="58" height="68" alt="Борода лесоруба">
+                            </label>
+                        </li>
 
-            <small class="stats__legend  stats__legend--bottom">
-                <sup class="stats__legend-sup">*</sup> - приведенные данные ложь
-            </small>
+                        <li class="beard-model__item">
+                            <label class="beard-model__item-lable" for="model-polar-explorer">
+                                <input class="visually-hidden  beard-model__item--input-condition"
+                                type="radio" name="models-group" id="model-polar-explorer" value="polar-explorer">
+                                <p class="beard-model__name">Полярник</p>
+                                <img src="./img/beard-3.svg" width="64" height="78" alt="Борода полярника">
+                            </label>
+                        </li>
+
+                        <li class="beard-model__item">
+                            <label class="beard-model__item-lable" for="model-boyar">
+                                <input class="visually-hidden  beard-model__item--input-condition"
+                                type="radio" name="models-group" id="model-boyar" value="boyar">
+                                <p class="beard-model__name">Боярин</p>
+                                <img src="./img/beard-4.svg" width="58" height="98" alt="Борода боярина">
+                            </label>
+                        </li>
+
+                        <li class="beard-model__item">
+                            <label class="beard-model__item-lable" for="model-wise-man">
+                                <input class="visually-hidden  beard-model__item--input-condition"
+                                type="radio" name="models-group" id="model-wise-man" value="wise-man">
+                                <p class="beard-model__name">Мудрец</p>
+                                <img src="./img/beard-5.svg" width="46" height="105" alt="Борода мудреца">
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset class="form__attribute  extra-services">
+                    <legend class="form__attribute-title">Дополнительные услуги:</legend>
+
+                    <ul class="extra-services__list">
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" checked
+                            type="checkbox" name="dye-beard" id="dye-beard">
+                            <label class="extra-services__item-lable" for="dye-beard">Подкрасить бороду</label>
+                        </li>
+
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" checked
+                            type="checkbox" name="roll-moustache" id="roll-moustache">
+                            <label class="extra-services__item-lable" for="roll-moustache">Накрутить усы</label>
+                        </li>
+
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" 
+                            type="checkbox" name="сomb-beard" id="сomb-beard">
+                            <label class="extra-services__item-lable" for="сomb-beard">Причесать бороду</label>
+                        </li>
+
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" 
+                            type="checkbox" name="match-whiskey" id="match-whiskey">
+                            <label class="extra-services__item-lable" for="match-whiskey">Подравнять виски</label>
+                        </li>
+
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" 
+                            type="checkbox" name="remove-gray-head" id="remove-gray-head">
+                            <label class="extra-services__item-lable" for="remove-gray-head">Убрать седину</label>
+                        </li>
+
+                        <li class="extra-services__item">
+                            <input class="visually-hidden  extra-services__item--input-condition" 
+                            type="checkbox" name="polish-baldness" id="polish-baldness">
+                            <label class="extra-services__item-lable" for="polish-baldness">Отполировать лысину</label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <button class="form__button button" type="submit">Отправить заявку</button>
+            </form>
+
         </section>
-
-        <section class="adventages">
-            <div class="adventages__wrapper  slider">
-                <h2 class="visually-hidden">Наши преимущества</h2>
-
-                <ul class="adventages__list  slider__list">
-                    <li class="adventages__item  adventages__item--fast  slider__item  slider__item--active">
-                        <h3 class="adventages__title">Быстро</h3>
-
-                        <p class="adventages__description">
-                            Мы делаем свою работу быстро! Два часа проелтят
-                            незаметно и вы - счастливый обладатель стильной стрижки-минутки.
-                        </p>
-                    </li>
-
-                    <li class="adventages__item  adventages__item--cool  slider__item">
-                        <h3 class="adventages__title">Круто</h3>
-
-                        <p class="adventages__description">
-                            Забудьте, как вы стриглись раньше. Мы сделаем из 
-                            вас звезду футбола или кино. Во всяком случае внешне.
-                        </p>
-                    </li>
-
-                    <li class="adventages__item  adventages__item--price  slider__item">
-                        <h3 class="adventages__title">Дорого</h3>
-
-                        <p class="adventages__description">
-                            Наши мастера - профессионалы своего дела и не могут 
-                            стоить дешево. К тому же, разве цена не дает определенный статус?
-                        </p>
-                    </li>
-                </ul>
-
-                <p class="adventages__toggles  slider__toggles">
-                    <button class="slider__toggle  slider__toggle--active" type="button">1</button>
-                    <button class="slider__toggle" type="button">2</button>
-                    <button class="slider__toggle" type="button">3</button>
-                </p>
-            </div>
-        </section>
-
-        <section class="news">
-            <div class="news__wrapper">
-                <h2 class="news__title">Новости и акции</h2>
-
-                <ul class="news__list">
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-29">
-                                <b class="news__day">29</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                Нам наконец-то завезли Егермейстер! Теперь вы можете 
-                                пропустить стаканчик во время стрижки.
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-19">
-                                <b class="news__day">19</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                В нашей команде пополнение, Борис "Бритва" Стригунец,
-                                обладатель множества титулов и наград пополнил наши стройные ряды. 
-                                Спешите записаться!
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-09">
-                                <b class="news__day">9</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                Всё дорожает, а наши стрижки нет! Как так? Приходите, 
-                                постригитесь и узнайте, в чём здесь подвох!
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                
-                <a class="news__to-all  button" href="#">Показать все</a>
-            </div>
-        </section>
-
-        <section class="reviews">
-            <div class="reviews__wrapper  slider">
-                <h2 class="reviews__title">Отзывы о нас</h2>
-
-                <a class="reviews__write  button" href="#">Оставить свой</a>
-
-                <div class="reviews__list  slider__list">
-                    <blockquote class="reviews__item  slider__item  slider__item--active">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Тревис Баркер</cite>
-                            <p class="reviews__text">
-                                Спасибо за лысину! Был проездом в Москве, заскочил 
-                                побриться, чтобы было видно новую татуировку!
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <blockquote class="reviews__item  slider__item">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Джон Смит</cite>
-                            <p class="reviews__text">
-                                Отличную стрижку мне мделали ребята.
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <blockquote class="reviews__item  slider__item">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Иван Бородайло</cite>
-                            <p class="reviews__text">
-                                В Бородинском ваша борода в надежныз руках!
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <button class="reviews__prev" type="button">Предыдущий отзыв</button>
-                    <button class="reviews__next" type="button">Слудующий отзыв</button>
-                </div>
-
-                <p class="reviews__toggle  slider__toggles">
-                    <button class="slider__toggle  slider__toggle--active" type="button">1</button>
-                    <button class="slider__toggle" type="button">2</button>
-                    <button class="slider__toggle" type="button">3</button>
-                </p>
-            </div>
-        </section>
+       
     </main>
 
     <footer class="page-footer">
@@ -387,6 +310,28 @@
        </div>
     </footer>
 
+    <section class="popup-form  popup-form--success">
+        <h1 class="popup-form__title">Это успех!</h1>
+        <p class="popup-form__text">
+            Ваша заявка отправлена.<br>
+            Ожидайте, мы свяжемся с вами как только<br>
+            будет минутка.
+        </p>
+
+        <button class="popup-form__button  popup-form__button-success  button" type="button">Закрыть окно</button>
+    </section>
+
+    <section class="popup-form  popup-form--fail">
+        <h1 class="popup-form__title">Неудача</h1>
+        <p class="popup-form__text">
+            Что-то пошло не так.<br> 
+            Проверьте выделенные<br> 
+            красным поля формы.
+        </p>
+
+        <button class="popup-form__button  button" type="button">Ок</button>
+    </section>
+
     <section class="modal modal_login">
         <h2>Личный кабинет</h2>
         <p class="modal-description">Введите свой логин и пароль, чтобы войти</p>
@@ -419,7 +364,7 @@
         
         <button class="modal_close" type="button">Закрыть</button>
     </section>
-    <div class="overlay"></div>
+    <div class="overlay"></div> <!-- overlay--login-show  overlay--popup-show -->
 
     <script src="./js-min/index.min.js"></script>
 

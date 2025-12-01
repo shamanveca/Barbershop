@@ -12,9 +12,9 @@
     
     <title>Барбершоп "Бородинский"</title>
 </head>
-<body>
+<body class="page-iner">
     <header class="page-header">
-        <a class="page-header__logo">
+        <a class="page-header__logo" href="index.min.html">
             <picture>
                 <source media="(min-width: 1200px)" srcset="./img/logotype-desktop.svg">
                 <source media="(min-width: 768px)" srcset="./img/logotype-tablet.svg">
@@ -29,16 +29,16 @@
             
             <div class="main-nav__wrapper">
                 <ul class="main-nav__list site-list">
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="index.min.html">Главная</a>
+                    </li>
+
                     <li class="site-list__item  site-list__item--active">
-                        <a class="site-list__link">Главная</a>
+                        <a class="site-list__link">Наши работы</a>
                     </li>
 
                     <li class="site-list__item">
-                        <a class="site-list__link" href="photo.min.html">Наши работы</a>
-                    </li>
-
-                    <li class="site-list__item">
-                        <a class="site-list__link" href="form.min.html">Записаться</a>
+                        <a class="site-list__link"  href="form.min.html">Записаться</a>
                     </li>
 
                     <li class="site-list__item">
@@ -65,232 +65,141 @@
         </nav>
     </header>
 
-    <main class="page-main">
-        <h1 class="visually-hidden">Барбершоп "Бородинский" - истинно мужская классика</h1>
+    <main class="page-works">
+        <header class="page-title">
+            <h1 class="page-title__title">Наши работы</h1>
+            <a class="page-title__link-inner  button" href="index.min.html">На главную</a>
+        </header>
 
-        <section class="stats">
-            <header class="stats__header">
-                <h2 class="visually-hidden">Статистика Барбершопа</h2>
-
-                <b class="stats__slogan">Стрижка у нас это выгодно!</b>
-                <p class="stats__intro">Мужская стрижка требует точного подхода.
-                    Обратимся к статистике:
+        <section class="page-works__works  works">
+            <article class="works-item works-item--work-of-month">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" width="480" height="480" srcset="./img/photo-1-desktop 1x, ./img/photo-1-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="480" srcset="./img/photo-1-tablet.jpg 1x, ./img/photo-1-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="480" src="./img/photo-1-mobile.jpg" srcset="./img/photo-1-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
                 </p>
-
-                <small class="stats__legend  stats__legend--top">
-                    <sup class="stats__legend-sup">*</sup> - приведенные данные ложь
-                </small>
-            </header>
-
-            <table class="stats__list">
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        1 500<sup class="stats__value-sup">*</sup>
-                    </td>
-
-                    <td class="stats__field">
-                        рублей<br> вложений
-                    </td>
-                </tr>
-
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        7 200
-                    </td>
-
-                    <td class="stats__field">
-                        секунд<br> времени мастера
-                    </td>
-                </tr>
-
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        90 000
-                    </td>
-
-                    <td class="stats__field">
-                        постриженных<br> волос
-                    </td>
-                </tr>
-
-                <tr class="stats__row">
-                    <td class="stats__value">
-                        500 000<sup class="stats__value-sup">*</sup>
-                    </td>
-
-                    <td class="stats__field">
-                        лайков<br> и комплиментов
-                    </td>
-                </tr>
-            </table>
-
-            <small class="stats__legend  stats__legend--bottom">
-                <sup class="stats__legend-sup">*</sup> - приведенные данные ложь
-            </small>
-        </section>
-
-        <section class="adventages">
-            <div class="adventages__wrapper  slider">
-                <h2 class="visually-hidden">Наши преимущества</h2>
-
-                <ul class="adventages__list  slider__list">
-                    <li class="adventages__item  adventages__item--fast  slider__item  slider__item--active">
-                        <h3 class="adventages__title">Быстро</h3>
-
-                        <p class="adventages__description">
-                            Мы делаем свою работу быстро! Два часа проелтят
-                            незаметно и вы - счастливый обладатель стильной стрижки-минутки.
-                        </p>
-                    </li>
-
-                    <li class="adventages__item  adventages__item--cool  slider__item">
-                        <h3 class="adventages__title">Круто</h3>
-
-                        <p class="adventages__description">
-                            Забудьте, как вы стриглись раньше. Мы сделаем из 
-                            вас звезду футбола или кино. Во всяком случае внешне.
-                        </p>
-                    </li>
-
-                    <li class="adventages__item  adventages__item--price  slider__item">
-                        <h3 class="adventages__title">Дорого</h3>
-
-                        <p class="adventages__description">
-                            Наши мастера - профессионалы своего дела и не могут 
-                            стоить дешево. К тому же, разве цена не дает определенный статус?
-                        </p>
-                    </li>
-                </ul>
-
-                <p class="adventages__toggles  slider__toggles">
-                    <button class="slider__toggle  slider__toggle--active" type="button">1</button>
-                    <button class="slider__toggle" type="button">2</button>
-                    <button class="slider__toggle" type="button">3</button>
-                </p>
-            </div>
-        </section>
-
-        <section class="news">
-            <div class="news__wrapper">
-                <h2 class="news__title">Новости и акции</h2>
-
-                <ul class="news__list">
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-29">
-                                <b class="news__day">29</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                Нам наконец-то завезли Егермейстер! Теперь вы можете 
-                                пропустить стаканчик во время стрижки.
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-19">
-                                <b class="news__day">19</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                В нашей команде пополнение, Борис "Бритва" Стригунец,
-                                обладатель множества титулов и наград пополнил наши стройные ряды. 
-                                Спешите записаться!
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="news__item">
-                        <a class="news__link" href="#">
-                            <time class="news__date" datetime="2017-09-09">
-                                <b class="news__day">9</b>
-                                сент
-                            </time>
-
-                            <p class="news__text">
-                                Всё дорожает, а наши стрижки нет! Как так? Приходите, 
-                                постригитесь и узнайте, в чём здесь подвох!
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                
-                <a class="news__to-all  button" href="#">Показать все</a>
-            </div>
-        </section>
-
-        <section class="reviews">
-            <div class="reviews__wrapper  slider">
-                <h2 class="reviews__title">Отзывы о нас</h2>
-
-                <a class="reviews__write  button" href="#">Оставить свой</a>
-
-                <div class="reviews__list  slider__list">
-                    <blockquote class="reviews__item  slider__item  slider__item--active">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Тревис Баркер</cite>
-                            <p class="reviews__text">
-                                Спасибо за лысину! Был проездом в Москве, заскочил 
-                                побриться, чтобы было видно новую татуировку!
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <blockquote class="reviews__item  slider__item">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Джон Смит</cite>
-                            <p class="reviews__text">
-                                Отличную стрижку мне мделали ребята.
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <blockquote class="reviews__item  slider__item">
-                        <p class="reviews__author-picture">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="./img/mobile_foto_otziv1_desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="./img/mobile_foto_otziv1_tablet.jpg">
-                                <img class="reviews__author-image" src="./img/mobile_foto_otziv1.jpg" width="50" height="51" alt="Фото Тревиса Баркера">
-                            </picture> 
-                        </p>
-
-                        <div class="reviews__comments">
-                            <cite class="reviews__author-name">Иван Бородайло</cite>
-                            <p class="reviews__text">
-                                В Бородинском ваша борода в надежныз руках!
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <button class="reviews__prev" type="button">Предыдущий отзыв</button>
-                    <button class="reviews__next" type="button">Слудующий отзыв</button>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Лжепётр Мчиславский</h2>
+                    <blockquote class="works-item__text">Где я только не стригся, но так как делаете это вы — не умеет никто другой! Ещё раз спасибо и до скорого!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритьё</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--mustache">Усы</li>
+                    </ul>
                 </div>
+            </article>
 
-                <p class="reviews__toggle  slider__toggles">
-                    <button class="slider__toggle  slider__toggle--active" type="button">1</button>
-                    <button class="slider__toggle" type="button">2</button>
-                    <button class="slider__toggle" type="button">3</button>
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-2-desktop.jpg 1x, ./img/photo-2-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-2-tablet.jpg 1x, ./img/photo-2-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-2-mobile.jpg" srcset="./img/photo-2-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
                 </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Саша Мальцев</h2>
+                    <blockquote class="works-item__text">Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-3-desktop.jpg 1x, ./img/photo-3-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-3-tablet.jpg 1x, ./img/photo-3-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-3-mobile.jpg" srcset="./img/photo-3-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Владимир Иваныч</h2>
+                    <blockquote class="works-item__text">К зимнему сезону — готов!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритьё</li>
+                        <li class="works-item__parameter-item works-item__parameter-item--mustache">Усы</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="works-item">
+                <p class="works-item__image-wrapper">
+                    <picture>
+                        <source media="(min-width: 1200px)" width="294" height="294" srcset="./img/photo-4-desktop.jpg 1x, ./img/photo-4-desktop.jpg 2x">
+                        <source media="(min-width: 768px)" width="280" height="294" srcset="./img/photo-4-tablet.jpg 1x, ./img/photo-4-tablet.jpg 2x">
+                        <img class="works-item__image" width="280" height="176" src="./img/photo-4-mobile.jpg" srcset="./img/photo-4-mobile.jpg 2x" alt="Пример нашей работы">
+                    </picture>
+                </p>
+                <div class="works-item__review">
+                    <h2 class="works-item__title">Винстон Синий</h2>
+                    <blockquote class="works-item__text">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</blockquote>
+                    <ul class="works-item__parameter-list">
+                        <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="page-works__price  price">
+            <div class="page-works__wrapper">
+                <h1 class="price__title">Прейскурант</h1>
+
+                <div class="price__wrapper">
+                    <table class="price__table  table">
+                        <tr class="table__row">
+                            <td class="table__row-number">1</td>
+                            <th class="table__row-title">Классическая стрижка</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 500 руб.</td>
+                        </tr>
+
+                        <tr class="table__row">
+                            <td class="table__row-number">2</td>
+                            <th class="table__row-title">Современный вариант</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 500 руб.</td>
+                        </tr>
+
+                        <tr class="table__row">
+                            <td class="table__row-number">3</td>
+                            <th class="table__row-title">Индивидуальный подход</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">2 000 руб.</td>
+                        </tr>
+
+                        <tr class="table__row">
+                            <td class="table__row-number">4</td>
+                            <th class="table__row-title">Бритьё бороды</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>без мытья<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">500 руб.</td>
+                        </tr>
+
+                        <tr class="table__row">
+                            <td class="table__row-number">5</td>
+                            <th class="table__row-title">Бритьё головы</th>
+                            <td class="table__row-comment">
+                                <span class="table--brackets">(</span>с мытьём головы<span class="table--brackets">)</span>
+                            </td>
+                            <td class="table__row-price">1 000 руб.</td>
+                        </tr>
+                    </table>
+
+                    <article class="price__discount  discount">
+                        <p class="discount__conditions">C 10:00 до 14:00 скидка 20%</p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
